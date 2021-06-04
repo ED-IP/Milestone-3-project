@@ -32,7 +32,7 @@ As user of the website:
 
 ## Wireframes
 
-The wireframes for the project can be found [here](https://github.com/ED-IP/Milestone-3-Project/) (placeholder)
+The wireframes for the project can be found [here](https://github.com/ED-IP/Milestone-3-project/blob/master/docs/Milestone_project_3_wireframes.pdf)
 
 ## Technologies Used
 
