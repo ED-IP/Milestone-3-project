@@ -1,8 +1,10 @@
 # Milestone 3 (Description)
 
-Dictionary of computer science terms (Tech-tionary)
+A simple app to manage the Book catalog from a shop
  
 ## UX
+
+All of this is outdated (no longer in the scope of the project)
 
 As the owner of the website I want:
 - That any guest can search for terms
@@ -32,7 +34,7 @@ As user of the website:
 
 ## Wireframes
 
-The wireframes for the project can be found [here](https://github.com/ED-IP/Milestone-3-project/blob/master/docs/Milestone_project_3_wireframes.pdf)
+Outdated wireframes for the project can be found [here](https://github.com/ED-IP/Milestone-3-project/blob/master/docs/Milestone_project_3_wireframes_outdated.pdf)
 
 ## Technologies Used
 
