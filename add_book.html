@@ -39,37 +39,39 @@
     </header>
 
     <br>
-    
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col">
-                <h1>Book Catalog</h1>
+                <h1>Add Book</h1>
             </div>
         </div>
 
-
-        <!--Navigation buttons-->
-        
-        <div class="row justify-content-center">
-            <div class="col-3">
-                <button type="button" class="btn btn-primary">Previous Book</button>
-            </div>
-            <div class="col-3">
-                <button type="button" class="btn btn-primary">next Book</button>
-            </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title of the book</label>
+            <textarea class="form-control" id="title" rows="1"></textarea>
         </div>
-        
+
+        <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <textarea class="form-control" id="author" rows="1"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="desc" class="form-label">Description</label>
+            <textarea class="form-control" id="desc" rows="4"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <textarea class="form-control" id="price" rows="1"></textarea>
+        </div>
 
         <br>
 
-        <!--buttons for actions over data base-->
-
         <div class="row justify-content-center">
             <div class="col-3">
-                <button type="button" class="btn btn-primary">Edit Book</button>
-            </div>
-            <div class="col-3">
-                <button type="button" class="btn btn-primary">Delete Book</button>
+                <button type="button" class="btn btn-primary">Add book</button>
             </div>
         </div>
     </div>
