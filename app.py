@@ -17,7 +17,6 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/")
 def hello():
     return "testing python"
 
