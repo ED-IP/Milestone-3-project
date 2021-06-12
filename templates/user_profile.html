@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+        <div class="card-panel">
+
+            <h3 class="center-align">
+                {{ username }} registration details
+            </h3>
+
+            <!--Username Field-->
+
+            
+            
+            <!--Password field-->
+            
+
+            <!--Register button-->
+
+            <div class="row">
+                <button type="submit" class="col s12 btn-large" action="{{ url_for('main_search') }}">
+                    Edit profile <i class="fas fa-sign-in-alt"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
