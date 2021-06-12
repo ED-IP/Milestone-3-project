@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/main_search")
 def main_search():
     searchs = mongo.db.terms.find()
-    return render_template("search.html", terms=searchs)
+    return render_template("search.html", searchs=searchs)
 
 
 if __name__ == "__main__":
