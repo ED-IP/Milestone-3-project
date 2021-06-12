@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     {% block styles %}
     {% endblock %}
     <title>Dictionary Search</title>
 </head>
+
 <body>
+
+    <header>
+
+        <!--Main Navigation bar with centered logo-->
+
+        <nav class="blue-grey darken-4">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('main_search') }}" class="brand-logo center">TECH-TiONARY</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="{{ url_for('main_search') }}">Home</a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!--Mobile Navigation bar-->
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="{{ url_for('main_search') }}">Home</a></li>
+        </ul>
+    </header>
 
     {% block content %}
     {% endblock %}
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -23,4 +54,5 @@
     {% block scripts %}
     {% endblock %}
 </body>
+
 </html>
