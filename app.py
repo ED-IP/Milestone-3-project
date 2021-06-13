@@ -114,6 +114,12 @@ def add_entry():
     return render_template("add_entry.html")
 
 
+@app.route("/edit_profile", methods=["GET", "POST"])
+def edit_profile():
+    return render_template("edit_user.html")
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

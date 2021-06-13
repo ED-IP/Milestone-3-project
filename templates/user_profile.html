@@ -7,22 +7,22 @@
         <div class="card-panel">
 
             <h3 class="center-align">
-                {{ username }} registration details
+                {{ session.user }} registration details
             </h3>
 
             <!--Username Field-->
 
             
             
-            <!--Password field-->
+            <!--Email field-->
             
 
-            <!--Register button-->
+            <!--Edit Profile button-->
 
             <div class="row">
-                <button type="submit" class="col s12 btn-large" action="{{ url_for('main_search') }}">
-                    Edit profile <i class="fas fa-sign-in-alt"></i>
-                </button>
+                <div class="col s6 offset-m3 center-align">
+                    <a href="{{ url_for('edit_profile') }}" class="btn-small">Edit Profile Details</a>                    
+                </div>
             </div>
         </div>
     </div>
