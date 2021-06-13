@@ -116,7 +116,23 @@ def add_entry():
 
 @app.route("/edit_profile", methods=["GET", "POST"])
 def edit_profile():
+    if request.method == "POST":
+        user_data = {
+            "email": request.form.get("email"),
+            "password": request.form.get("password")
+        }
+        mongo.db.users.update({"username": {session.user}.lower()}, user_data)
+        flash("Profile updated")
+        return redirect(url_for("edit_profile"))
+
     return render_template("edit_user.html")
+
+
+@app.route("/delete_entry/<term>")
+def delete_entry(term):
+    mongo.db.terms.remove({"_id": ObjectId(term)})
+    flash("Entry Successfully deleted")
+    return redirect(url_for("profile"))
 
 
 

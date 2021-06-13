@@ -5,13 +5,13 @@
 <h3 class="center-align">Edit User Details</h3>
 
 <div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_profile') }}">
         <div class="card-panel">
             <!--Username Field-->
             <div class="row">
                 <div class="col s12">
                     <h3 class="center-align">
-                        {{ session.user }}'s details
+                        {{ session.user }}'s Details
                     </h3>
                 </div>
             </div>
