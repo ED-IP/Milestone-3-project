@@ -7,17 +7,22 @@
         <form class="col s12" method="POST" action="">
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-phone"></i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                    <label for="icon_prefix2">New Term</label>
+                    <input id="term" name="term"
+                        class="materialize-textarea" maxlength="20" required></input>
+                    <label for="term">New Term</label>
                 </div>
+            </div>                
+            <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                    <label for="icon_prefix2">User</label>
+                    <input id="username" name="username" class="materialize-textarea"></input>
+                    <label for="username">User</label>
                 </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                    <label for="textarea1">Definition</label>
+                    <textarea id="definition" name="definition" class="materialize-textarea"
+                        minlength="15" maxlength="128" required validate></textarea>
+                    <label for="definition">Add Definition</label>
                 </div>
             </div>
         </form>
