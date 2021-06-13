@@ -99,8 +99,18 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_entry")
+@app.route("/add_entry", methods=["GET", "POST"])
 def add_entry():
+    if request.method == "POST":
+        term = {
+            "term": request.form.get("term"),
+            "user": session["user"],
+            "definition": request.form.get("definition")
+        }
+        mongo.db.terms.insert_one(term)
+        flash("New entry added to the dicitonary")
+        return redirect(url_for("add_entry"))
+        
     return render_template("add_entry.html")
 
 
