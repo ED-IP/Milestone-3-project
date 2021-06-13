@@ -1,24 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-{% for entry in searchs %}
-{{entry.term}}<br>
-{{entry.user}}<br>
-{{entry.definition}}<br>
-{% endfor %}
 
 <ul class="collapsible">
+    {% for entry in searchs %}
     <li>
-        <div class="collapsible-header black-text"><i class="fas fa-caret-down"></i>First</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-header black-text"><i class="fas fa-caret-down"></i>
+            <strong>{{ entry.term }} </strong> by {{ entry.user }}
+        </div>
+        <div class="collapsible-body">
+            <p>{{ entry.definition }}</p>
+        </div>
     </li>
-    <li>
-        <div class="collapsible-header black-text"><i class="fas fa-caret-down"></i>Second</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-        <div class="collapsible-header black-text"><i class="fas fa-caret-down"></i>Third</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
+    {% endfor %}
 </ul>
 
 {% endblock %}
