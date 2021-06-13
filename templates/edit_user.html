@@ -18,37 +18,33 @@
             <!--email field-->
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email" type="email" name="email" class="validate" required>
+                    <input value="Please type a new email" id="email" type="email" name="email" class="validate" required>
                     <label for="email">New E-mail Address</label>
                 </div>
             </div>
             <!--Password field-->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-lock prefix"></i>
                     <input id="password" name="password" type="password" minlength="3"
                         maxlength="16" pattern="^[a-zA-Z0-9]{3,16}$" class="validate" required>
                     <label for="password">New Password</label>
                 </div>
             </div>
 
-            <!--Register button-->
+            <!--Register/cancel button-->
 
             <div class="row">
-                <button type="submit" class="col s12 btn-large">
-                    Update details <i class="fas fa-sign-in-alt"></i>
-                </button>
+                <div class="col s12 center-align">
+                    <button type="submit" class="col s5 btn-large">
+                        Update details <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn-large red col s5 offset-m2">
+                        Cancel edit
+                    </a>
+                </div>
             </div>
         </div>
     </form>
-</div>
-
-<div class="row">
-    <div class="col s12">
-        <p class="center-align">
-            Already have an user, <a href="{{ url_for('login') }}">Click here to Log In</a>
-        </p>
-    </div>
 </div>
 
 {% endblock %}
