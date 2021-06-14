@@ -4,24 +4,37 @@
 
 <div class="row">
     <div class="col s12 m8 offset-m2">
+
+
+        <h3 class="center-align">
+            {{ session.user }} registration details
+        </h3>
+
         <div class="card-panel">
 
-            <h3 class="center-align">
-                {{ session.user }} registration details
-            </h3>
+            <h4>Terms added by {{ session.user }}</h4>
 
-            <!--Username Field-->
+            <ul class="collapsible">
+                {% for entry in searchs %}
+                    {% if entry.user == session.user %}
+                        <li>
+                            <div class="collapsible-header black-text"><i class="fas fa-caret-down"></i>
+                                <strong>{{ entry.term }} </strong> by {{ session.user }}
+                            </div>
+                            <div class="collapsible-body">
+                                <p>{{ entry.definition }}</p>
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
 
-            
-            
-            <!--Email field-->
-            
 
             <!--Edit Profile button-->
 
             <div class="row">
                 <div class="col s6 offset-m3 center-align">
-                    <a href="{{ url_for('edit_profile') }}" class="btn-small">Edit Profile Details</a>                    
+                    <a href="{{ url_for('edit_profile') }}" class="btn-small">Edit Profile Details</a>
                 </div>
             </div>
         </div>
