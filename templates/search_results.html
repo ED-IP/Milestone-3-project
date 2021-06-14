@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col s12 m8 offset-m2">
+
+        
+
+        <div class="card-panel">
+
+              <ul class="collapsible">
+                {% for entry in searchs %}
+                        <li>
+                            <div class="collapsible-header black-text"><i class="fas fa-caret-down"></i>
+                                <strong>{{ entry.term }} </strong> by {{ session.user }}
+                            </div>
+                            <div class="collapsible-body">
+                                <p>{{ entry.definition }}</p>
+                            </div>
+                        </li>
+                   
+                {% endfor %}
+            </ul>
+
+
+            <!--New search button-->
+
+            <div class="row">
+                <div class="col s6 offset-m3 center-align">
+                    <a href="{{ url_for('main_search') }}" class="btn-small">New search</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
