@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/main_search", methods=["GET", "POST"])
+@app.route("/main_search")
 def main_search():
     return render_template("search.html")
 
