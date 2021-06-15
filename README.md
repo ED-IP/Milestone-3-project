@@ -1,6 +1,6 @@
 # Milestone 3 (Description)
 
-A dictionay of Computer Science terms
+A simple dictionay for Computer Science terms
  
 ## UX
 
