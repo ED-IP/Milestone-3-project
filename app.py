@@ -30,7 +30,7 @@ def main_search():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        #check if username exists in the DB
+        # check if username exists in the DB
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -49,7 +49,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("User successfully register")
         return redirect(url_for("profile", username=session["user"]))
-        
+
     return render_template("register_user.html")
 
 
@@ -135,7 +135,6 @@ def delete_entry(term):
     mongo.db.terms.remove({"_id": ObjectId(term)})
     flash("Entry Successfully deleted")
     return redirect(url_for("profile"))
-
 
 
 if __name__ == "__main__":
