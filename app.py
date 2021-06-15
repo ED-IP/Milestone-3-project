@@ -22,9 +22,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/main_search", methods=["GET", "POST"])
 def main_search():
-    query = request.form.get("query")
-    searchs = list(mongo.db.terms.find({"$text": {"$search": query}}))
-    return render_template("search.html", searchs=searchs)
+    
+    return render_template("search.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
