@@ -1,24 +1,25 @@
 # Milestone 3 (Description)
 
-A simple app to manage the Book catalog from a shop
+A dictionay of Computer Science terms
  
 ## UX
 
-All of this is outdated (no longer in the scope of the project)
+~~As the owner of the website I want:~~
+- ~~That any guest can search for terms~~
+- ~~If a guest do a search without success I want to show them an error message~~
+- ~~That registred users could add new entrys to the dictionary~~
+- ~~That registred users could edit or delete only their own entrys~~
+- ~~To register an user a guest need to provide a username, email address and password~~
+- ~~An Administrator user that could edit and delete any entry on the dictionary~~
 
-As the owner of the website I want:
-- That any guest can search for terms
-- If a guest do a search without success I want to show them an error message
-- That registred users could add new entrys to the dictionary
-- That registred users could edit or delete only their own entrys
-- To register an user a guest need to provide a username, email address and password
-- An Administrator user that could edit and delete any entry on the dictionary
+A user of the website:
+- Should be able to search for terms inside the dictionary (All users)
+- Anonimous users can't add, delete or edit terms in the database
+- Anonimous users could become registered user using the corresponding form
+- Registered users should be able add new entrys to the dictionary
+- Registered users only will be able to edit/delete their own entrys
+- Register user would have the option to update the email and password used for registration
 
-As user of the website:
-- I want to be able to search terms and see their definition
-- I want to have the ability to add new entrys to the dictionary
-- I want the possibility of edit or delete entrys
-- I want to be able to update my information (e-mail)
 
 ## Features
 
@@ -34,7 +35,7 @@ As user of the website:
 
 ## Wireframes
 
-Outdated wireframes for the project can be found [here](https://github.com/ED-IP/Milestone-3-project/blob/master/docs/Milestone_project_3_wireframes_outdated.pdf)
+Wireframes for the project can be found [here](https://github.com/ED-IP/Milestone-3-project/blob/master/docs/Milestone_project_3_wireframes_outdated.pdf)
 
 ## Technologies Used
 
