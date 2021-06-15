@@ -40,8 +40,13 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
 ## Technologies Used
 
 - **[HTML]**
-	- **HTML** is used to create the structure of the web-page and to add content. (placeholder)
-	
+	- **HTML** is used to create the structure of the web-page.
+
+- **[Materialize](https://materializecss.com/)**
+    - **Materialize** is used to provide css style and elements to the web-page
+
+- **[Font Awesome](https://fontawesome.com/)**
+	- The page use several simbols from **Font Awesome** service.
 
 - **[Google Fonts](https://fonts.google.com/)**
 	- The page use several fonts for text from **Google Fonts** service. (placeholder)
