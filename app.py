@@ -126,11 +126,27 @@ def edit_profile():
     return render_template("edit_user.html")
 
 
+@app.route("/edit_entry", methods=["GET", "POST"])
+def edit_entry():
+    if request.method == "POST":
+        term = {
+            "term": request.form.get("term"),
+            "user": session["user"],
+            "definition": request.form.get("definition")
+        }
+        mongo.db.terms.insert_one(term)
+        flash("New entry added to the dicitonary")
+        return redirect(url_for("add_entry"))
+
+    return render_template("add_entry.html")
+
+
+
 @app.route("/delete_entry/<term>")
 def delete_entry(term):
     mongo.db.terms.remove({"_id": ObjectId(term)})
     flash("Entry Successfully deleted")
-    return redirect(url_for("profile"))
+    return redirect(url_for("profile", username=session["user"]))
 
 
 if __name__ == "__main__":

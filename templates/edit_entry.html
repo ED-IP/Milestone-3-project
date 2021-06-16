@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">Add new term and definition to the Dictionary</h3>
+
+    <div class="row">
+        <form class="col s12" method="POST" action="{{ url_for('add_entry') }}">
+            <!--Term input field-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="term" name="term"
+                        class="materialize-textarea" maxlength="20" required></textarea>
+                    <label for="term">New Term added by {{session.user}}</label>
+                </div>
+            </div>                
+            <!--Definition input field-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="definition" name="definition" class="materialize-textarea"
+                        minlength="15" maxlength="128" required validate></textarea>
+                    <label for="definition">Add Definition</label>
+                </div>
+            </div>
+            <!--Submit button-->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large">
+                        Submit new term <i class="fas fa-plus-square right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
