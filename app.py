@@ -126,8 +126,9 @@ def edit_profile():
     return render_template("edit_user.html")
 
 
+@app.route("/edit_entry", methods=["GET"])
 @app.route("/edit_entry/<entry_id>", methods=["GET", "POST"])
-def edit_entry(entry_id):
+def edit_entry(entry_id=None):
     if request.method == "POST":
         term = {
             "term": request.form.get("term"),
