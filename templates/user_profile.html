@@ -26,7 +26,7 @@
                             </div>
                         </li>
                         <a href="{{ url_for('main_search') }}" class="btn-small green">Edit Term</a>
-                        <a href="{{ url_for('main_search') }}" class="btn-small red">Delete Term</a>
+                        <a href="{{ url_for('delete_entry', term=entry.term') }}" class="btn-small red">Delete Term</a>
                     {% endif %}
                 {% endfor %}
             </ul>
