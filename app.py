@@ -126,19 +126,19 @@ def edit_profile():
     return render_template("edit_user.html")
 
 
-@app.route("/edit_entry", methods=["GET", "POST"])
-def edit_entry():
+@app.route("/edit_entry/<term>", methods=["GET", "POST"])
+def edit_entry(term):
     if request.method == "POST":
         term = {
             "term": request.form.get("term"),
-            "user": session["user"],
             "definition": request.form.get("definition")
         }
-        mongo.db.terms.insert_one(term)
-        flash("New entry added to the dicitonary")
-        return redirect(url_for("add_entry"))
+        mongo.db.terms.update(term)
+        flash("New entry added to the dictionary")
+        return redirect(url_for("edit_entry"))
 
-    return render_template("add_entry.html")
+    entry = mongo.db.terms.find_one({"_id": ObjectId(term)})
+    return render_template("edit_entry.html", entry=entry)
 
 
 
