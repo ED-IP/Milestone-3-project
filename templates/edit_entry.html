@@ -10,13 +10,13 @@
 
             <div class="row">
                 <div class="input-field col s12">
-                    <span>You are editing the term: </span><span>{{ entry_id.term }}</span>
+                    <span><strong>You are editing the term: </strong></strong></span><span>{{ entry_id.term }}</span>
                 </div>
             </div>   
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="term" name="term"
-                        class="materialize-textarea" maxlength="20" required></textarea>
+                        class="materialize-textarea" maxlength="20" value="" required></textarea>
                     <label for="term">Edit Term</label>
                 </div>
             </div>                
@@ -25,22 +25,30 @@
 
             <div class="row">
                 <div class="input-field col s12">
-                    <span>You are editing the current definition: </span><span>{{ entry_id.definition }}</span>
+                    <span><strong>This is the current definition: </strong></span><span>{{ entry_id.definition }}</span>
                 </div>
             </div>  
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="definition" name="definition" class="materialize-textarea"
-                        minlength="15" maxlength="128" required></textarea>
+                        minlength="15" maxlength="128"  value="" required></textarea>
                     <label for="definition">Edit Definition</label>
                 </div>
             </div>
-            <!--Submit button-->
+
+            <!--Submit/cancel buttons-->
+
             <div class="row">
                 <div class="col s12 center-align">
-                    <button type="submit" class="btn-large">
+                    <button type="submit" class="btn-large s3">
                         Update Entry<i class="fas fa-plus-square right"></i>
                     </button>
+                    <a href="{{ url_for('edit_entry', entry_id=entry_id._id) }}" class="btn-large red s3">
+                        Clear text
+                    </a>
+                    <a href="{{ url_for('profile', username=session['user']) }}" class="btn-large green s3">
+                        Return to user Profile
+                    </a>
                 </div>
             </div>
         </form>
