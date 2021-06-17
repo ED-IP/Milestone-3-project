@@ -73,6 +73,10 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
 
 https://stackoverflow.com/questions/17873820/flask-url-for-with-multiple-parameters
 
+https://www.w3schools.com/python/python_mongodb_update.asp
+
+https://stackoverflow.com/questions/60547442/pymongo-update-one-not-updating-based-on-id
+
 ### HTML
 
  
