@@ -36,7 +36,7 @@
 
             <div class="row">
                 <div class="col s6 offset-m3 center-align">
-                    <a href="{{ url_for('edit_profile') }}" class="btn-small">Edit Profile Details</a>
+                    <a href="{{ url_for('edit_profile', username=session['user']) }}" class="btn-small">Edit Profile Details</a>
                 </div>
             </div>
         </div>
