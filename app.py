@@ -130,15 +130,15 @@ def edit_profile():
 @app.route("/edit_entry/<entry_id>", methods=["GET", "POST"])
 def edit_entry(entry_id=None):
     if request.method == "POST":
-        newvalue = { "$set": { "term": request.form.get("term"),"definition": request.form.get("definition") } }
-        query={"_id": ObjectId(entry_id)}
-        mongo.db.terms.update_one(query,newvalue)
+        query = {"_id": ObjectId(entry_id)}
+        newvalue = {"$set": {"term": request.form.get("term"), "definition": request.form.get("definition")}}
+        mongo.db.terms.update_one(query, newvalue)
         flash("Entry updated")
         return redirect(url_for("edit_entry"))
+
     else:
         entry = mongo.db.terms.find_one({"_id": ObjectId(entry_id)})
         return render_template("edit_entry.html", entry_id=entry)
-
 
 
 @app.route("/delete_entry/<term>")
