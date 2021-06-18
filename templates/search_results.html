@@ -2,37 +2,38 @@
 
 {% block content %}
 
-<div class="row">
-    <div class="col s12 m8 offset-m2">
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
 
-        
+            <div class="card-panel">
+                {% if results|length > 0 %}
+                    {% for entry in results %}
+                        <ul class="collapsible">
+                            <li>
+                                <div class="collapsible-header black-text"><i class="fas fa-caret-down"></i>
+                                    <strong>{{ entry.term }} </strong> by {{ entry.user }}
+                                </div>
+                                <div class="collapsible-body">
+                                    <p>{{ entry.definition }}</p>
+                                </div>
+                            </li>
+                        </ul>
+                    {% endfor %}
+                {% else %}
 
-        <div class="card-panel">
+                        <h3 class="red-text center-align">No matches found</h3>
 
-              <ul class="collapsible">
-                {% for entry in results %}
-                        <li>
-                            <div class="collapsible-header black-text"><i class="fas fa-caret-down"></i>
-                                <strong>{{ entry.term }} </strong> by {{ session.user }}
-                            </div>
-                            <div class="collapsible-body">
-                                <p>{{ entry.definition }}</p>
-                            </div>
-                        </li>
-                   
-                {% endfor %}
-            </ul>
+                {% endif %}
 
+                <!--New search button-->
 
-            <!--New search button-->
-
-            <div class="row">
-                <div class="col s6 offset-m3 center-align">
-                    <a href="{{ url_for('main_search') }}" class="btn-small">New search</a>
+                <div class="row">
+                    <div class="col s6 offset-m3 center-align">
+                        <a href="{{ url_for('main_search') }}" class="btn-small">Search again</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 {% endblock %}

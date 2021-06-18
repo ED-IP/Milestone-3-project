@@ -19,19 +19,4 @@
     </form>
 </div>
 
-<ul class="collapsible">
-    {% for entry in searchs %}
-    {% if entry.user == session.user %}
-    <li>
-        <div class="collapsible-header black-text"><i class="fas fa-caret-down"></i>
-            <strong>{{ entry.term }} </strong> by {{ entry.user }}
-        </div>
-        <div class="collapsible-body">
-            <p>{{ entry.definition }}</p>
-        </div>
-    </li>
-    {% endif %}
-    {% endfor %}
-</ul>
-
 {% endblock %}
