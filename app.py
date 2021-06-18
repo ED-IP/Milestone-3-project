@@ -123,14 +123,14 @@ def add_entry():
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
 def edit_profile(username=None):
     if request.method == "POST":
-        query = {"_id": ObjectId(username)}
+        user_id = mongo.db.users.findOne({'user': username})
+        query = {"_id": ObjectId(user_id._id)}
         newvalue = {"$set": {"email": request.form.get("email"), "password": request.form.get("password")}}
         mongo.db.users.update_one(query, newvalue)
         flash("Profile updated")
         return redirect(url_for("edit_profile"))
 
     else:
-        entry = mongo.db.users.find_one({"_id": ObjectId(username)})
         return render_template("edit_user.html", username=username)
 
 
