@@ -130,7 +130,7 @@ def edit_profile(username=None):
         return redirect(url_for("edit_profile"))
 
     else:
-        entry = mongo.db.users.find_one({"_id": ObjectId(username._id)})
+        entry = mongo.db.users.find_one({"_id": ObjectId(username)})
         return render_template("edit_user.html", username=username)
 
 

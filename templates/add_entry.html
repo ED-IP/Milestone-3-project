@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add new term and definition to the Dictionary</h3>
+    <h3 class="center-align">Add new terms and definitions to the Dictionary</h3>
 
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('add_entry') }}">
@@ -10,7 +10,7 @@
                 <div class="input-field col s12">
                     <textarea id="term" name="term"
                         class="materialize-textarea" maxlength="20" required></textarea>
-                    <label for="term">New Term added by {{session.user}}</label>
+                    <label for="term">New Term added as {{session.user}}</label>
                 </div>
             </div>                
             <!--Definition input field-->
