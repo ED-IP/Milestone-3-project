@@ -25,6 +25,13 @@ def main_search():
     return render_template("search.html")
 
 
+@app.route("/search_result", methods=["GET", "POST"])
+def search_result():
+    query = request.form.get("query")
+    results = list(mongo.db.terms.find({"$text": {"$search": query}}))
+    return render_template("search_results.html", results=results)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
