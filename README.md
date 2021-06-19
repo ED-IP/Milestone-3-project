@@ -77,6 +77,8 @@ https://www.w3schools.com/python/python_mongodb_update.asp
 
 https://stackoverflow.com/questions/60547442/pymongo-update-one-not-updating-based-on-id
 
+https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html#pymongo.collection.Collection.find_one
+
 ### HTML
 
  
