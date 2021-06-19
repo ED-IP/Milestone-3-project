@@ -22,11 +22,16 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/main_search")
 def main_search():
+    '''Renders the main search page'''
     return render_template("search.html")
 
 
 @app.route("/search_result", methods=["GET", "POST"])
 def search_result():
+    '''Searchs for a term in the database.
+        Returns:
+        A list with the results of the query
+    '''
     query = request.form.get("query")
     results = list(mongo.db.terms.find({"$text": {"$search": query}}))
     return render_template("search_results.html", results=results)
@@ -34,6 +39,16 @@ def search_result():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    ''' Register a user.
+            if the user is created:
+                Returns:
+                    Add user to the database
+                    Once the user is created login it in the application
+                    Returns to the User profile page
+
+            If the user is not created:
+                Returns to the register user page
+    '''
     if request.method == "POST":
         # check if username exists in the DB
         existing_user = mongo.db.users.find_one(
@@ -60,6 +75,17 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    ''' Log In an user in the application.
+            if the user exists:
+                The login details used are correct:
+                    Login it in the application
+                    Returns to the User profile page
+
+                The login details aren't correct:
+                    Displays a error message
+                    Return to Login page
+
+    '''
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -85,6 +111,14 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    ''' Shows profile for the user.
+            Args:
+                username: username for the user
+            Returns:
+                User's profile page
+                A list with the terms inside the terms collection (searchs)
+                The username of the user (username)
+    '''
     searchs = list(mongo.db.terms.find())
     # grab session user's username from DB
     username = mongo.db.users.find_one(
@@ -98,6 +132,11 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
+    ''' Close the session for the user.
+            Log out the user
+            Shows a message about the action
+            Returns to the login page
+    '''
     # close the session
     flash("Your session has been closed")
     session.pop("user")
