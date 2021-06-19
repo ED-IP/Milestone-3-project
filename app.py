@@ -58,12 +58,12 @@ def register():
             flash("Username in use, please choose a different one")
             return redirect(url_for("register"))
 
-        register = {
+        register_user = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email"),
             "password": generate_password_hash(request.form.get("password")),
         }
-        mongo.db.users.insert_one(register)
+        mongo.db.users.insert_one(register_user)
 
         # put new user into session
         session["user"] = request.form.get("username").lower()
@@ -147,7 +147,8 @@ def edit_entry(entry_id=None):
     '''
     if request.method == "POST":
         query = {"_id": ObjectId(entry_id)}
-        newvalue = {"$set": {"term": request.form.get("term"), "definition": request.form.get("definition")}}
+        newvalue = {"$set": {"term": request.form.get("term"),
+                    "definition": request.form.get("definition")}}
         mongo.db.terms.update_one(query, newvalue)
         flash("Entry updated")
         return redirect(url_for("edit_entry"))
@@ -210,7 +211,8 @@ def edit_profile(username=None):
         user_info = mongo.db.users.find_one({'username': username})
         user_id = user_info["_id"]
         query = {"_id": ObjectId(user_id)}
-        newvalue = {"$set": {"email": request.form.get("email"), "password": generate_password_hash(request.form.get("password"))}}
+        newvalue = {"$set": {"email": request.form.get("email"),
+                    "password": generate_password_hash(request.form.get("password"))}}
         mongo.db.users.update_one(query, newvalue)
         flash("Profile updated")
         return redirect(url_for("edit_profile"))
@@ -227,7 +229,7 @@ def delete_entry(term):
             Returns:
                 Delete the term entry in the database
                 Shows a message
-                Returns to the users'profile page            
+                Returns to the users'profile page
     '''
     mongo.db.terms.remove({"_id": ObjectId(term)})
     flash("Entry Successfully deleted")
