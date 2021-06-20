@@ -1,35 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add new terms and definitions to the Dictionary</h3>
+<h3 class="center-align">Add new terms and definitions to the Dictionary</h3>
 
-    <div class="row">
-        <form class="col s12" method="POST" action="{{ url_for('add_entry') }}">
-            <!--Term input field-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="term" name="term"
-                        class="materialize-textarea" maxlength="20" required></textarea>
-                    <label for="term">New Term added as {{session.user}}</label>
-                </div>
-            </div>                
-            <!--Definition input field-->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="definition" name="definition" class="materialize-textarea"
-                        minlength="15" maxlength="128" required validate></textarea>
-                    <label for="definition">Add Definition</label>
-                </div>
+<div class="row">
+    <form class="col s12" method="POST" action="{{ url_for('add_entry') }}">
+        <!--Term input field-->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="term" name="term" class="materialize-textarea" maxlength="20" required></textarea>
+                <label for="term">New Term added as {{session.user}}</label>
             </div>
-            <!--Submit button-->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <button type="submit" class="btn-large">
-                        Submit new term <i class="fas fa-plus-square right"></i>
-                    </button>
-                </div>
+        </div>
+        <!--Definition input field-->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="definition" name="definition" class="materialize-textarea" minlength="15" maxlength="128"
+                    required validate></textarea>
+                <label for="definition">Add Definition</label>
             </div>
-        </form>
-    </div>
+        </div>
+        <!--Submit/cancel buttons-->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large col s3 offset-s2">
+                    Submit new term <i class="fas fa-plus-square right"></i>
+                </button>
+                <a href="{{ url_for('profile', username=session['user']) }}" class="btn-large red col s3 offset-s2">
+                    Cancel
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}

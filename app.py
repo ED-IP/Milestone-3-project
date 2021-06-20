@@ -192,7 +192,7 @@ def edit_entry(entry_id=None):
     entry = mongo.db.terms.find_one({"_id": ObjectId(entry_id)})
     if not entry or entry['user'] != session["user"]:
         flash("You are not authoriced to do that operation")
-        return render_template('search.html')
+        return render_template('login_user.html')
     else:
         if request.method == "POST":
             query = {"_id": ObjectId(entry_id)}
@@ -215,18 +215,21 @@ def add_entry():
             Insert the dictionary data in the database
             Returns to the add_entry page
     '''
-    username = session["user"]
-    if request.method == "POST":
-        term = {
-                "term": request.form.get("term"),
-                "user": session["user"],
-                "definition": request.form.get("definition")
-            }
-        mongo.db.terms.insert_one(term)
-        flash("New entry added to the dicitonary")
-        return redirect(url_for("profile", username=session['user']))
+    if not session:
+        flash("You are not authoriced to do that operation")
+        return render_template('login_user.html')
+    else:
+        if request.method == "POST":
+            term = {
+                    "term": request.form.get("term"),
+                    "user": session["user"],
+                    "definition": request.form.get("definition")
+                }
+            mongo.db.terms.insert_one(term)
+            flash("New entry added to the dicitonary")
+            return redirect(url_for("profile", username=session['user']))
 
-    return render_template("add_entry.html", username=username)
+        return render_template("add_entry.html")
 
 
 @app.route("/delete_entry/<term>")
@@ -239,9 +242,14 @@ def delete_entry(term):
                 Shows a message
                 Returns to the users'profile page
     '''
-    mongo.db.terms.remove({"_id": ObjectId(term)})
-    flash("Entry Successfully deleted")
-    return redirect(url_for("profile", username=session["user"]))
+    entry = mongo.db.terms.find_one({"_id": ObjectId(term)})
+    if not entry or entry['user'] != session["user"]:
+        flash("You are not authoriced to do that operation")
+        return render_template('search.html')
+    else:
+        mongo.db.terms.remove({"_id": ObjectId(term)})
+        flash("Entry Successfully deleted")
+        return redirect(url_for("profile", username=session["user"]))
 
 
 if __name__ == "__main__":
