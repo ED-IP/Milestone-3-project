@@ -1,3 +1,7 @@
 .flash_alerts h4 {
     line-height: 2;
 }
+
+.btn-padding {
+    margin: 10px 0;
+}
