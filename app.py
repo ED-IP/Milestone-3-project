@@ -134,16 +134,16 @@ def profile(username):
 @app.route("/edit_entry/<entry_id>", methods=["GET", "POST"])
 def edit_entry(entry_id=None):
     ''' Edit entry data in the dictionary.
-            Args:
-                entry_id: the "_id" field for the entry
-            Returns:
-                Convert the entry_id value to ObjectId type (query)
-                Get new values from the edit_entry page (newvalue)
-                Using query and newvalues, update the data in the database
-                Shows a message
-                Returns to the edit_entry page
-            If the update is cancel:
-                Returns to edit_entry page
+        Args:
+        entry_id: the "_id" field for the entry
+        Returns:
+        Convert the entry_id value to ObjectId type (query)
+        Get new values from the edit_entry page (newvalue)
+        Using query and newvalues, update the data in the database
+        Shows a message
+        Returns to the edit_entry page
+        If the update is cancel:
+        Returns to edit_entry page
     '''
     if request.method == "POST":
         query = {"_id": ObjectId(entry_id)}
@@ -174,10 +174,12 @@ def logout():
 @app.route("/add_entry", methods=["GET", "POST"])
 def add_entry():
     ''' Add an entry to the dictionary.
-            Create a dictionary with the new data from the add_entry.html and session user (term)
+            Create a dictionary with the new data from the add_entry.html
+                and session user (term)
             Insert the dictionary data in the database
             Returns to the add_entry page
     '''
+    username = session["user"]
     if request.method == "POST":
         term = {
             "term": request.form.get("term"),
@@ -186,9 +188,9 @@ def add_entry():
         }
         mongo.db.terms.insert_one(term)
         flash("New entry added to the dicitonary")
-        return redirect(url_for("add_entry"))
+        return redirect(url_for("profile", username=session['user']))
 
-    return render_template("add_entry.html")
+    return render_template("add_entry.html", username=username)
 
 
 @app.route("/edit_profile", methods=["GET", "POST"])
