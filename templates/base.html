@@ -27,15 +27,16 @@
                 <a href="{{ url_for('main_search') }}" class="brand-logo center">TECH-TiONARY</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url_for('main_search') }}">Home</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">User Profile</a></li>
                         <li><a href="{{ url_for('add_entry') }}">Add new term</a></li>
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">User Profile</a></li>
+                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                         <li><a href="{{ url_for('register') }}">Register</a></li>
                         <li><a href="{{ url_for('login') }}">Log In</a></li>
                     {% endif %}
-                        <li><a href="{{ url_for('main_search') }}">Home</a></li>
+                        
 
                 </ul>
             </div>
@@ -44,15 +45,16 @@
         <!--Mobile Navigation bar-->
 
         <ul class="sidenav" id="mobile-demo">
+                <li><a href="{{ url_for('main_search') }}">Home</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                <li><a href="{{ url_for('profile', username=session['user']) }}">User Profile</a></li>
                 <li><a href="{{ url_for('add_entry') }}">Add new term</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">User Profile</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>                
             {% else %}
                 <li><a href="{{ url_for('register') }}">Register</a></li>
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
             {% endif %}
-                <li><a href="{{ url_for('main_search') }}">Home</a></li>
+                
         </ul>
     </header>
 

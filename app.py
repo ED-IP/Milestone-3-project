@@ -145,9 +145,9 @@ def edit_profile(username=None):
             If the update is cancel:
                 Returns to user's edit_user page
     '''
+    user_info = mongo.db.users.find_one({'username': username})
     if request.method == "POST":
         # find the _id for the user
-        user_info = mongo.db.users.find_one({'username': username})
         user_id = user_info["_id"]
         query = {"_id": ObjectId(user_id)}
         newvalue = {"$set": {"email": request.form.get("email"),
@@ -157,7 +157,6 @@ def edit_profile(username=None):
         return redirect(url_for("edit_profile"))
 
     else:
-        user_info = mongo.db.users.find_one({'username': username})
         user_email = user_info["email"]
         return render_template("edit_user.html", username=username, user_email=user_email)
 
@@ -190,17 +189,22 @@ def edit_entry(entry_id=None):
         If the update is cancel:
         Returns to edit_entry page
     '''
-    if request.method == "POST":
-        query = {"_id": ObjectId(entry_id)}
-        newvalue = {"$set": {"term": request.form.get("term"),
-                    "definition": request.form.get("definition")}}
-        mongo.db.terms.update_one(query, newvalue)
-        flash("Entry updated")
-        return redirect(url_for("edit_entry", entry_id=entry_id))
-
+    entry = mongo.db.terms.find_one({"_id": ObjectId(entry_id)})
+    if not entry or entry['user'] != session["user"]:
+        flash("You are not authoriced to do that operation")
+        return render_template('search.html')
     else:
-        entry = mongo.db.terms.find_one({"_id": ObjectId(entry_id)})
-        return render_template("edit_entry.html", entry_id=entry)
+        if request.method == "POST":
+            query = {"_id": ObjectId(entry_id)}
+            newvalue = {"$set": {"term": request.form.get("term"),
+                        "definition": request.form.get("definition")}}
+            mongo.db.terms.update_one(query, newvalue)
+            flash("Entry updated")
+            return redirect(url_for("edit_entry", entry_id=entry_id))
+
+        else:
+            entry = mongo.db.terms.find_one({"_id": ObjectId(entry_id)})
+            return render_template("edit_entry.html", entry_id=entry)
 
 
 @app.route("/add_entry", methods=["GET", "POST"])
@@ -214,10 +218,10 @@ def add_entry():
     username = session["user"]
     if request.method == "POST":
         term = {
-            "term": request.form.get("term"),
-            "user": session["user"],
-            "definition": request.form.get("definition")
-        }
+                "term": request.form.get("term"),
+                "user": session["user"],
+                "definition": request.form.get("definition")
+            }
         mongo.db.terms.insert_one(term)
         flash("New entry added to the dicitonary")
         return redirect(url_for("profile", username=session['user']))
