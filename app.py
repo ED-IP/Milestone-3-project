@@ -130,69 +130,6 @@ def profile(username):
     return redirect(url_for("main_search"))
 
 
-@app.route("/edit_entry", methods=["GET", "POST"])
-@app.route("/edit_entry/<entry_id>", methods=["GET", "POST"])
-def edit_entry(entry_id=None):
-    ''' Edit entry data in the dictionary.
-        Args:
-        entry_id: the "_id" field for the entry
-        Returns:
-        Convert the entry_id value to ObjectId type (query)
-        Get new values from the edit_entry page (newvalue)
-        Using query and newvalues, update the data in the database
-        Shows a message
-        Returns to the edit_entry page
-        If the update is cancel:
-        Returns to edit_entry page
-    '''
-    if request.method == "POST":
-        query = {"_id": ObjectId(entry_id)}
-        newvalue = {"$set": {"term": request.form.get("term"),
-                    "definition": request.form.get("definition")}}
-        mongo.db.terms.update_one(query, newvalue)
-        flash("Entry updated")
-        return redirect(url_for("edit_entry"))
-
-    else:
-        entry = mongo.db.terms.find_one({"_id": ObjectId(entry_id)})
-        return render_template("edit_entry.html", entry_id=entry)
-
-
-@app.route("/logout")
-def logout():
-    ''' Close the session for the user.
-            Log out the user
-            Shows a message about the action
-            Returns to the login page
-    '''
-    # close the session
-    flash("Your session has been closed")
-    session.pop("user")
-    return redirect(url_for("login"))
-
-
-@app.route("/add_entry", methods=["GET", "POST"])
-def add_entry():
-    ''' Add an entry to the dictionary.
-            Create a dictionary with the new data from the add_entry.html
-                and session user (term)
-            Insert the dictionary data in the database
-            Returns to the add_entry page
-    '''
-    username = session["user"]
-    if request.method == "POST":
-        term = {
-            "term": request.form.get("term"),
-            "user": session["user"],
-            "definition": request.form.get("definition")
-        }
-        mongo.db.terms.insert_one(term)
-        flash("New entry added to the dicitonary")
-        return redirect(url_for("profile", username=session['user']))
-
-    return render_template("add_entry.html", username=username)
-
-
 @app.route("/edit_profile", methods=["GET", "POST"])
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
 def edit_profile(username=None):
@@ -221,6 +158,69 @@ def edit_profile(username=None):
 
     else:
         return render_template("edit_user.html", username=username)
+
+
+@app.route("/logout")
+def logout():
+    ''' Close the session for the user.
+            Log out the user
+            Shows a message about the action
+            Returns to the login page
+    '''
+    # close the session
+    flash("Your session has been closed")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
+@app.route("/edit_entry", methods=["GET", "POST"])
+@app.route("/edit_entry/<entry_id>", methods=["GET", "POST"])
+def edit_entry(entry_id=None):
+    ''' Edit entry data in the dictionary.
+        Args:
+        entry_id: the "_id" field for the entry
+        Returns:
+        Convert the entry_id value to ObjectId type (query)
+        Get new values from the edit_entry page (newvalue)
+        Using query and newvalues, update the data in the database
+        Shows a message
+        Returns to the edit_entry page
+        If the update is cancel:
+        Returns to edit_entry page
+    '''
+    if request.method == "POST":
+        query = {"_id": ObjectId(entry_id)}
+        newvalue = {"$set": {"term": request.form.get("term"),
+                    "definition": request.form.get("definition")}}
+        mongo.db.terms.update_one(query, newvalue)
+        flash("Entry updated")
+        return redirect(url_for("edit_entry", entry_id=entry_id))
+
+    else:
+        entry = mongo.db.terms.find_one({"_id": ObjectId(entry_id)})
+        return render_template("edit_entry.html", entry_id=entry)
+
+
+@app.route("/add_entry", methods=["GET", "POST"])
+def add_entry():
+    ''' Add an entry to the dictionary.
+            Create a dictionary with the new data from the add_entry.html
+                and session user (term)
+            Insert the dictionary data in the database
+            Returns to the add_entry page
+    '''
+    username = session["user"]
+    if request.method == "POST":
+        term = {
+            "term": request.form.get("term"),
+            "user": session["user"],
+            "definition": request.form.get("definition")
+        }
+        mongo.db.terms.insert_one(term)
+        flash("New entry added to the dicitonary")
+        return redirect(url_for("profile", username=session['user']))
+
+    return render_template("add_entry.html", username=username)
 
 
 @app.route("/delete_entry/<term>")
