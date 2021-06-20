@@ -194,7 +194,7 @@ def edit_entry(entry_id=None):
         Returns to edit_entry page
     '''
     entry = mongo.db.terms.find_one({"_id": ObjectId(entry_id)})
-    if not entry or entry['user'] != session["user"]:
+    if not entry or not session or entry['user'] != session["user"]:
         flash("You are not authoriced to do that operation")
         return render_template('login_user.html')
     else:
