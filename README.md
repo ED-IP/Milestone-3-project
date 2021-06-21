@@ -1,6 +1,27 @@
-# Milestone 3 (Description)
+# Tech-Tionary 
 
-A simple dictionay for Computer Science terms
+TECH-TiONARY is dictionay dedicated to store Computer Science and tech terms.
+The objective of the site is to have short definitions of common terms used in the field of computer since and technology but without giving a full explain of the term in question, for example for terms related to coding it will not provide examples of use.
+
+The target user is those that want a quick summary of some term/words that they could have read in more in detail documentation or around the web.
+Also it is possible for guest to register in the website adquiring the ability of add/edit/delete entrys to the dictionary (with some limitations for the last two options).
+
+## Features
+
+### Existing Features
+
+- __Navigation Bar__
+
+- Featured on all eight pages, the full responsive navigation bar includes links to the Home page (main search), Log In, Register, User profile, Edit User Details, Search Results, Add Entry and Edit Entry. It is identical in each page to allow for easy navigation.
+- The navigation bar allows the user to navigate through the site with different screen size devices devices without having to use the "back" and "Forward" buttons.
+- Depending if the user is a Registered one or Anonimous guest some of the options will be or not present in the menu.
+
+- __Search Page__
+
+- The Search page (main page and also accesible with the "Home" option in the menu) present a field where the user can search inside the dictionary
+
+
+### Future Features
  
 ## UX
 
@@ -21,12 +42,7 @@ A user of the website:
 - Register user would have the option to update the email and password used for registration
 
 
-## Features
 
-### Existing Features
-
-
-### Future Features
 
 
 ## Typography and Color Scheme
