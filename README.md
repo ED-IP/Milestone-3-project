@@ -161,6 +161,13 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
         PORT| 5000
         SECRET_KEY    |
 
+    7. Go to the Deployment tab and in the Deployment Method section choose GitHub
+        - In the connect to GitHub choose the correct repository and click connect
+        
+    8. In the section Automatic Deploys  choose the branch to deploy (in mycase was the master one) and click in Enable Automtic Deploys
+
+    9. After building the proyect it should be deployed. You can open the app by clicking in the Open App button at the top of the page
+
 
 
 
