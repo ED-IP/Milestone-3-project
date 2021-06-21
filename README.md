@@ -18,7 +18,19 @@ Also it is possible for guest to register in the website adquiring the ability o
 
 - __Search Page__
 
-    - The Search page (main page and also accesible with the "Home" option in the menu) present a field where the user can search inside the dictionary
+    - The Search page (main page and also accesible with the "Home" option in the menu) presents a field where the user can search inside the dictionary
+
+- __Register User page__
+
+    - In this section of the web an anonimous user can register to gain the ability to add/edit/delete entrys from dictionary
+    - The user have to provide a username, e-mail and a password
+    - There is a link to the Log In page in case that the user have already registered.
+
+- __Log In page__
+
+    - In the Log In area the user have to provide a valid (already registered) Username and Password
+    - If the Log In details are incorrect a warning message is shown
+    - There is a link to the Register page in case that the user wants to register.
 
 
 ### Future Features
