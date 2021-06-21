@@ -133,11 +133,12 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
 
 - These are the steps followed to deploy the proyect on Heroku
 
-    1. Create a requierements.txt, in Gitpod terminal type:
+    1. Create a requierements.txt, in Gitpod terminal:
         - pip3 freeze --local > requirements.txt
     
-    2. Create a Procfile, in Gitpod terminal type:
+    2. Create a Procfile, in Gitpod terminal:
         - echo web: python app.py > Procfile
+        - open the Procfile and check that there is no trailing lines after the text
 
     3. Add and push the files to GitHub:
         - git add requirements.txt
@@ -146,6 +147,21 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
         - git push
 
     4. On the Heroku Dashboard click in the New button and choose "New App"
+
+    5. Choose a name and a region (for the proyect I use Europe) and click create
+
+    6. Once the app is created click on the settings tab, and then click on "Reveal config Vars" button.
+        - Add the following key, values pairs
+        
+        KEY | VALUES
+        --------------|--------------
+        IP | 0.0.0.0
+        MONGO_DBNAME|
+        MONGO_URI| mongodb+srv://user:passworduser@namecluster.8pkrb.mongodb.net/collection?retryWrites=true&w=majority
+        PORT| 5000
+        SECRET_KEY    |
+
+
 
 
 
