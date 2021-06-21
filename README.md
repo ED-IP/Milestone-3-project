@@ -12,13 +12,13 @@ Also it is possible for guest to register in the website adquiring the ability o
 
 - __Navigation Bar__
 
-- Featured on all eight pages, the full responsive navigation bar includes links to the Home page (main search), Log In, Register, User profile, Edit User Details, Search Results, Add Entry and Edit Entry. It is identical in each page to allow for easy navigation.
-- The navigation bar allows the user to navigate through the site with different screen size devices devices without having to use the "back" and "Forward" buttons.
-- Depending if the user is a Registered one or Anonimous guest some of the options will be or not present in the menu.
+    - Featured on all eight pages, the full responsive navigation bar includes links to the Home page (main search), Log In, Register, User profile, Edit User Details, Search Results, Add Entry and Edit Entry. It is identical in each page to allow for easy navigation.
+    - The navigation bar allows the user to navigate through the site with different screen size devices devices without having to use the "back" and "Forward" buttons.
+    - Depending if the user is a Registered one or Anonimous guest some of the options will be or not present in the menu.
 
 - __Search Page__
 
-- The Search page (main page and also accesible with the "Home" option in the menu) present a field where the user can search inside the dictionary
+    - The Search page (main page and also accesible with the "Home" option in the menu) present a field where the user can search inside the dictionary
 
 
 ### Future Features
