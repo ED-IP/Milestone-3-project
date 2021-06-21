@@ -92,21 +92,24 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
 	- **HTML** is used to create the structure of the web-page.
 
 - **[Materialize](https://materializecss.com/)**
-    - **Materialize** is used to provide css style and elements to the web-page
+    - **Materialize** is used to provide css style for the web-page
 
 - **[Font Awesome](https://fontawesome.com/)**
-	- The page use several simbols from **Font Awesome** service.
+	- The website use several simbols from **Font Awesome** service.
 
 ## To do / Incomplete features
 
-- There are several input fields that need to indicate that they have some restrictions in the characters they can be used on them and limitations in length
+- There are several input fields that need to indicate that they have some restrictions in the characters they can accept and limitations in length
 - Add the footer
+- Visually more engaging warning message (when matches aren't found in the dictionary, a user trying to edit a entry that is not their etc...)
+- Remove Debug from app.py
    
 ## Testing
 
 - User stories testing
 
-    - Should be able to search for terms inside the dictionary (All users)
+    - Users Should be able to search for terms inside the dictionary (Anonimous and registered)
+
 
     - Anonimous users can't add, delete or edit terms in the database
     
@@ -126,6 +129,23 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
 
 ## Deployment
 
+### Heroku Deployment
+
+- These are the steps followed to deploy the proyect on Heroku
+
+    1. Create a requierements.txt, in Gitpod terminal type:
+        - pip3 freeze --local > requirements.txt
+    
+    2. Create a Procfile, in Gitpod terminal type:
+        - echo web: python app.py > Procfile
+
+    3. Add and push the files to GitHub:
+        - git add requirements.txt
+        - git add Procfile
+        - git commit -m ""
+        - git push
+
+    4. On the Heroku Dashboard click in the New button and choose "New App"
 
 
 
