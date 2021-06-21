@@ -61,11 +61,12 @@ Also it is possible for guest to register in the website adquiring the ability o
 
 ### Future Features
 
-- Add somekind of random search to the main search page to make it more appealing
+- Add some random search results to the main search page to make it more appealing
 - Add checks to avoid duplicate entrys
 - Night mode color Scheme
 - The ability to add user as administrator that can add/edit/delete users and entrys in the dictionary
 - A GUI for the administrator user
+- A dedicated error page (E.G: when an user tries to delete an entry by a different user)
  
 ## UX
 
@@ -108,7 +109,9 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
 
 - User stories testing
 
-    - Users Should be able to search for terms inside the dictionary (Anonimous and registered)
+    - Users Should be able to search for terms inside the dictionary (Anonimous and registered):
+
+        
 
 
     - Anonimous users can't add, delete or edit terms in the database
