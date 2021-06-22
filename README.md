@@ -66,7 +66,7 @@ Also it is possible for guest to register in the website adquiring the ability o
 - Night mode color Scheme
 - The ability to add user as administrator that can add/edit/delete users and entrys in the dictionary
 - A GUI for the administrator user
-- A dedicated error page (E.G: when an user tries to delete an entry by a different user)
+- A dedicated error page with descriptives messages (E.G: when an user tries to delete an entry by a different user)
  
 ## UX
 
@@ -107,27 +107,42 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
    
 ## Testing
 
+The tests have been done on mobile using a Samsung S8, with Brave Browser 1.25.73
+On Desktop the following browsers has been used for testing:
+
 - User stories testing
 
     - Users Should be able to search for terms inside the dictionary (Anonimous and registered):
         - Tested doing search as a diferent register users and not register user. Theresult is the one expected returning entrys from inside the dictionary as expected.
 
     - Anonimous users can't add, delete or edit terms in the database
-        -
+        - If an anonimous user tries to edit a term using an URL to reach the edit entry page a warning is shown
+        - If it tries to add a term using an URL to reach the add term page a warning is shown
+        - If it tries to reach the profile page of a register user to be able to delete a term an error happens and the app crashes
+        - Same results happens in mobile and desktop configurations
     
     - Anonimous users could become registered user using the corresponding form
         - 
     
     - Registered users should be able add new entrys to the dictionary
+        - Functionality wors as intended on mobile and desktop
     
     - Registered users only will be able to edit/delete their own entrys
+        - 
+        
+        
 
     - Register user would have the option to update the email and password used for registration
+
+- Other scenarios:
+    - If an entry that has been deleted is tried to be updated an error appears
 
 
 ### Bugs
 
-- When update user profile two alerts messages appears, one for success and another for failure
+- When an update in the user profile happens two alerts messages appears, one for success and another for failure
+- On mobile view (Samsung S8, Brave Browser 1.25.73), the text for the buttons edit/delete in the user_profile appears outside of the button
+- On mobile view (Samsung S8, Brave Browser 1.25.73), the Title on the Navbar doesn't render completelly
 
 
 ## Deployment
@@ -171,8 +186,7 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
 
     9. After building the proyect it should be deployed. You can open the app by clicking in the Open App button at the top of the page
 
-
-
+    10. The address for the deployed proyect: https://dictionary-cs.herokuapp.com/
 
 
 ## Credits
