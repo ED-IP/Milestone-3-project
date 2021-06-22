@@ -171,6 +171,8 @@ For Desktop site the following browsers has been used:
 
 - Lighthouse tests:
 
+Desktop:
+
 Section | Performance | Accessibility | Best Practices | Seo
 ------------|------|------|------|------
 Main Search | 99 | 92 | 100 | 89
@@ -180,6 +182,20 @@ User Profile | 100 | 84 | 100 | 89
 Edit term | 100 | 92 | 100 | 91
 Add term | 99 | 92 | 100 | 89
 Edit User | 99 | 92 | 100 | 89
+
+Mobile:
+
+Section | Performance | Accessibility | Best Practices | Seo
+------------|------|------|------|------
+Main Search | 96 | 92 | 100 | 91
+Register user | 97 | 92 | 100 | 91
+Log In user | 97 | 92 | 100 | 82
+User Profile | 96 | 84 | 100 | 91
+Edit term | 96 | 92 | 100 | 91
+Add term | 96 | 92 | 100 | 91
+Edit User | 96 | 92 | 100 | 91
+
+The test didn't work for the Search Result page.
 
 ### Bugs
 
