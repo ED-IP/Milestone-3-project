@@ -127,7 +127,7 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
 
 ### Bugs
 
-
+- When update user profile two alerts messages appears, one for success and another for failure
 
 
 ## Deployment
