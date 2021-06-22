@@ -143,7 +143,7 @@ For Desktop site the following browsers has been used:
  - Firefox 89.0.1 (Windows version)
  - Brave 1.25.72 (windows version)
 
-- User stories testing
+### User stories testing
 
     - Users Should be able to search for terms inside the dictionary (Anonymous and registered):
         - Tested doing searches as a different register users and not register user.
@@ -168,7 +168,7 @@ For Desktop site the following browsers has been used:
     - Register user would have the option to update the email and password used for registration
         - Tested the functionality on mobile and desktop, the entry in the database is updated but there is a bug with the success messages (noted in the bug section)
 
-- Other scenarios:
+### Other scenarios:
     - If an entry that has been deleted is tried to be updated an error appears
 
 - [W3C Validation tools](https://validator.w3.org/)
@@ -178,7 +178,10 @@ For Desktop site the following browsers has been used:
 - [CSS Validator](https://jigsaw.w3.org/css-validator/)
    - Style.css was tested with the css validator, no error was found
 
-- Lighthouse tests:
+- [JSHint]https://jshint.com/
+   - script.js was tested with JSHint no warnings were given
+
+### Lighthouse tests:
 
 Desktop:
 
@@ -206,11 +209,13 @@ Edit User | 96 | 92 | 100 | 91
 
 The test didn't work for the Search Result page.
 
-- Browser's Developer tools:
-    The developers tools were used to tes the reponsive design of the site.
-     - In general it works correctly but there is a constant issue with the text (in buttons specially) that overflow the button.
-     - Ipad and Iphone settings show a white line at the right side that runs from the top to the bottom of the screen in severeal models.
-     - Using the Navbar menu covers all the screen when Galaxy fold setting was tested. Once an option is selected the menu closes correctly
+### Browser's Developer tools
+
+The developers tools were used to tes the reponsive design of the site.
+
+- In general it works correctly but there is a constant issue with the text (in buttons specially) that overflow the button.
+- Ipad and Iphone settings show a white line at the right side that runs from the top to the bottom of the screen in severeal models.
+- Using the Navbar menu covers all the screen when Galaxy fold setting was tested. Once an option is selected the menu closes correctly
 
 ### Bugs
 
@@ -221,6 +226,17 @@ The test didn't work for the Search Result page.
     application should not crash and show a message instead
 
 ## Deployment
+
+### GitHub Deployment
+
+To deploy the project on GitHub Pages:
+ 1. Go to the address of the repository https://github.com/ED-IP/Milestone-3-project
+ 2. Click on the settings tab.
+ 3. Go to the "Pages" section.
+ 4. On the Sources section, click on the "None" button and select the Master branch.
+ 5. Click Save
+ 
+ The project should be deployed now
 
 ### Heroku Deployment
 
@@ -262,6 +278,8 @@ These are the steps followed to deploy the proyect on Heroku
 8. In the section Automatic Deploys choose the branch to deploy (in my case was the master one) and click in Enable Automatic Deploys
 
 9. After building the project it should be deployed. You can open the app by clicking in the Open App button at the top of the page
+
+10. The project is deployed at this address https://dictionary-cs.herokuapp.com/
 
 ## Credits
 
