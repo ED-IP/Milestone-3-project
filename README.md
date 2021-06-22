@@ -113,7 +113,7 @@ On Desktop the following browsers has been used for testing:
 - User stories testing
 
     - Users Should be able to search for terms inside the dictionary (Anonimous and registered):
-        - Tested doing search as a diferent register users and not register user. Theresult is the one expected returning entrys from inside the dictionary as expected.
+        - Tested doing search as a diferent register users and not register user. The behaviour is the expected one, returning entrys from inside the dictionary.
 
     - Anonimous users can't add, delete or edit terms in the database
         - If an anonimous user tries to edit a term using an URL to reach the edit entry page a warning is shown
