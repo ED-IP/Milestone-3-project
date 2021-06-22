@@ -285,15 +285,15 @@ These are the steps followed to deploy the proyect on Heroku
 
 The following terms and part of the descriptions were taken from [Wikipedia](https://www.wikipedia.com) and added to the dictionary
 
-[Computer Science](https://en.wikipedia.org/wiki/Computer_science)
-[Solid State Drive](https://en.wikipedia.org/wiki/Solid-state_drive)
-[Central Processing Unit](https://en.wikipedia.org/wiki/Central_processing_unit)
-[Graphic Processing Unit](https://en.wikipedia.org/wiki/Graphics_processing_unit)
-[Hard disk drive](https://en.wikipedia.org/wiki/Hard_disk_drive)
-[Compiler](https://en.wikipedia.org/wiki/Compiler)
-[Source code](https://en.wikipedia.org/wiki/Source_code)
-[Binary code](https://en.wikipedia.org/wiki/Binary_code)
-[Internet](https://en.wikipedia.org/wiki/Internet)
+1. [Computer Science](https://en.wikipedia.org/wiki/Computer_science)
+2. [Solid State Drive](https://en.wikipedia.org/wiki/Solid-state_drive)
+3. [Central Processing Unit](https://en.wikipedia.org/wiki/Central_processing_unit)
+4. [Graphic Processing Unit](https://en.wikipedia.org/wiki/Graphics_processing_unit)
+5. [Hard disk drive](https://en.wikipedia.org/wiki/Hard_disk_drive)
+6. [Compiler](https://en.wikipedia.org/wiki/Compiler)
+7. [Source code](https://en.wikipedia.org/wiki/Source_code)
+8. [Binary code](https://en.wikipedia.org/wiki/Binary_code)
+9. [Internet](https://en.wikipedia.org/wiki/Internet)
 
 
 The use of a second @app.route was inspired for the following post [stackoverflow](https://stackoverflow.com/questions/17873820/flask-url-for-with-multiple-parameters)
