@@ -199,7 +199,7 @@ These are the steps followed to deploy the proyect on Heroku
 
 4. On the Heroku Dashboard click in the New button and choose "New App"
 
-5. Choose a name and a region (for the proyect I use Europe) and click create
+5. Choose a name and a region (for the project I use Europe) and click create
 
 6. Once the app is created click on the settings tab, and then click on "Reveal config Vars" button.
     - Add the following key, values pairs
@@ -212,14 +212,14 @@ These are the steps followed to deploy the proyect on Heroku
         PORT| 5000
         SECRET_KEY    |
     
-    - Note: The values used in the proyect are not present here as they include passwords and user
+    - Note: The values used in the project are not present here as they include passwords and user
 
 7. Go to the Deployment tab and in the Deployment Method section choose GitHub
     - In the connect to GitHub choose the correct repository and click connect
         
-8. In the section Automatic Deploys  choose the branch to deploy (in mycase was the master one) and click in Enable Automtic Deploys
+8. In the section Automatic Deploys choose the branch to deploy (in my case was the master one) and click in Enable Automatic Deploys
 
-9. After building the proyect it should be deployed. You can open the app by clicking in the Open App button at the top of the page
+9. After building the project it should be deployed. You can open the app by clicking in the Open App button at the top of the page
 
 ## Credits
 
