@@ -15,7 +15,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="term" name="term" class="materialize-textarea" maxlength="20" value=""
+                <textarea id="term" name="term" class="materialize-textarea" minlength="2" maxlength="30" data-length="30" value=""
                     required>{{ entry_id.term }}</textarea>
                 <label for="term">Edit Term</label>
             </div>
@@ -30,7 +30,7 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="definition" name="definition" class="materialize-textarea" minlength="15" maxlength="128"
+                <textarea id="definition" name="definition" class="materialize-textarea" minlength="5" maxlength="256" data-length="256"
                     value="" required>{{ entry_id.definition }}</textarea>
                 <label for="definition">Edit Definition</label>
             </div>
