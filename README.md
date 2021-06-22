@@ -156,10 +156,18 @@ For Desktop site the following browsers has been used:
         - Anonimous users can't access any profile and therefore they can not access to the delete option (returns a 500 error, added to bug section)        
 
     - Register user would have the option to update the email and password used for registration
+        - Tested the funcionality on mobile and desktop, the entry in the database is updated but there is a bug with the success messages (noted in the bug section)
 
 
 - Other scenarios:
     - If an entry that has been deleted is tried to be updated an error appears
+
+[W3C Validation tools](https://validator.w3.org/)
+   - All the HTML files were tested with the W3C validator, some html errors were found and fixed.
+   - Still there are errors that I think are related to the Jinja templates
+
+[CSS Validator](https://jigsaw.w3.org/css-validator/)
+   - Style.css was tested with the css validator, not error was found
 
 
 ### Bugs
