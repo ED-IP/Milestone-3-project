@@ -162,13 +162,23 @@ For Desktop site the following browsers has been used:
 - Other scenarios:
     - If an entry that has been deleted is tried to be updated an error appears
 
-[W3C Validation tools](https://validator.w3.org/)
+- [W3C Validation tools](https://validator.w3.org/)
    - All the HTML files were tested with the W3C validator, some html errors were found and fixed.
    - Still there are errors that I think are related to the Jinja templates
 
-[CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [CSS Validator](https://jigsaw.w3.org/css-validator/)
    - Style.css was tested with the css validator, no error was found
 
+- Lighthouse tests:
+Section | Performance | Accessibility | Best Practices | Seo
+------------|------|------|------|------
+Main Search | 99 | 92 | 100 | 89
+Register user | 100 | 92 | 100 | 89
+Log In user | 100 | 92 | 100 | 78
+User Profile | 100 | 84 | 100 | 89
+Edit term | 100 | 92 | 100 | 91
+Add term | 99 | 92 | 100 | 89
+Edit User | 99 | 92 | 100 | 89
 
 ### Bugs
 
