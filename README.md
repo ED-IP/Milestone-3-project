@@ -178,7 +178,7 @@ For Desktop site the following browsers has been used:
 - [CSS Validator](https://jigsaw.w3.org/css-validator/)
    - Style.css was tested with the css validator, no error was found
 
-- [JSHint]https://jshint.com/
+- [JSHint](https://jshint.com/)
    - script.js was tested with JSHint no warnings were given
 
 ### Lighthouse tests:
