@@ -110,13 +110,13 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
 - User stories testing
 
     - Users Should be able to search for terms inside the dictionary (Anonimous and registered):
-
-        
-
+        - Tested doing search as a diferent register users and not register user. Theresult is the one expected returning entrys from inside the dictionary as expected.
 
     - Anonimous users can't add, delete or edit terms in the database
+        -
     
     - Anonimous users could become registered user using the corresponding form
+        - 
     
     - Registered users should be able add new entrys to the dictionary
     
