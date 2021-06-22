@@ -12,7 +12,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-user-plus prefix"></i>
                     <input id="username" name="username" type="text" minlength="5"
-                        maxlength="16" data-length="16" pattern="^[a-zA-Z0-9]{5,16}$" class="validate" required>
+                        maxlength="16" data-length="16" data-error="Please only use letters and numbers" pattern="^[a-zA-Z0-9]{5,16}$" class="validate" required>
                     <label for="username">Username</label>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-user-lock prefix"></i>
                     <input id="password" name="password" type="password" minlength="8"
-                        maxlength="16" pattern="^[a-zA-Z0-9]{3,16}$" class="validate" required>
+                        maxlength="16" pattern="^[a-zA-Z0-9]{8,16}$" data-error="Please only use letters and numbers" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
