@@ -213,7 +213,7 @@ The test didn't work for the Search Result page.
 
 The developers tools were used to test the reponsive design of the site.
 
-- In general it works correctly but there is a constant issue with the text (in buttons specially) that overflow the button.
+- In general it works correctly but there is a constant issue with the text that overflow elements.
 - Ipad and Iphone settings show a white line at the right side that runs from the top to the bottom of the screen in severeal models.
 - Using the Navbar menu covers all the screen when Galaxy fold setting was tested. Once an option is selected the menu closes correctly
 
