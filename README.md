@@ -203,6 +203,8 @@ These are the steps followed to deploy the proyect on Heroku
         MONGO_URI| mongodb+srv://user:passworduser@namecluster.8pkrb.mongodb.net/collection?retryWrites=true&w=majority
         PORT| 5000
         SECRET_KEY    |
+    
+    - Note: The values used in the proyect are not present here as they include passwords and user
 
 7. Go to the Deployment tab and in the Deployment Method section choose GitHub
     - In the connect to GitHub choose the correct repository and click connect
@@ -210,9 +212,6 @@ These are the steps followed to deploy the proyect on Heroku
 8. In the section Automatic Deploys  choose the branch to deploy (in mycase was the master one) and click in Enable Automtic Deploys
 
 9. After building the proyect it should be deployed. You can open the app by clicking in the Open App button at the top of the page
-
-10. The address for the deployed proyect: https://dictionary-cs.herokuapp.com/
-
 
 ## Credits
 
@@ -225,20 +224,3 @@ The following links were consulted to solve issues during the development
 https://www.w3schools.com/python/python_mongodb_update.asp
 
 https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html#pymongo.collection.Collection.find_one
-
-### HTML
-
- 
-
-### Javascript
-
- 
-
-### Content
-
-
-### Media
-
-- Images links :
-	- [owner](https://www.google.com)(placeholder)
-	
