@@ -295,6 +295,7 @@ The following terms and part of the descriptions were taken from [Wikipedia](htt
 8. [Binary code](https://en.wikipedia.org/wiki/Binary_code)
 9. [Internet](https://en.wikipedia.org/wiki/Internet)
 
+Some of the code it's based in the task manager from the project from the course.
 
 The use of a second @app.route was inspired for the following post [stackoverflow](https://stackoverflow.com/questions/17873820/flask-url-for-with-multiple-parameters)
 
