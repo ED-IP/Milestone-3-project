@@ -8,15 +8,15 @@
         <!--Term input field-->
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="term" name="term" class="materialize-textarea" maxlength="20" required></textarea>
+                <textarea id="term" name="term" class="materialize-textarea" maxlength="30" data-length="30" required></textarea>
                 <label for="term">New Term added as {{session.user}}</label>
             </div>
         </div>
         <!--Definition input field-->
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="definition" name="definition" class="materialize-textarea" minlength="15" maxlength="128"
-                    required validate></textarea>
+                <textarea id="definition" name="definition" class="materialize-textarea" minlength="2" maxlength="256"
+                    data-length="256" required validate></textarea>
                 <label for="definition">Add Definition</label>
             </div>
         </div>
