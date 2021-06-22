@@ -58,6 +58,16 @@ Also it is possible for guest to register in the website adquiring the ability o
     - The current value for the entrys are shown on the top of the edit field to help the user known the previous values and avoid possible mistakes
     - The user only can edit entrys made by itself
 
+- __Databases__
+
+For this proyect I use a database with two collections, one for the terms of the dictionay and another one for the users:
+- User collection
+
+    KEY | VALUES
+    -------|-------
+    user | 
+    email | 
+    password | 
 
 ### Future Features
 
@@ -93,7 +103,7 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
 	- **HTML** is used to create the structure of the web-page.
 
 - **[Materialize](https://materializecss.com/)**
-    - **Materialize** is used to provide css style for the web-page
+    - **Materialize** is used to provide css style and some JavaScript content.
 
 - **[Font Awesome](https://fontawesome.com/)**
 	- The website use several simbols from **Font Awesome** service.
@@ -107,8 +117,13 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
    
 ## Testing
 
-The tests have been done on mobile using a Samsung S8, with Brave Browser 1.25.73
-On Desktop the following browsers has been used for testing:
+The tests have been done for mobile / small screen devices:
+ - Samsung S8, with Brave Browser 1.25.73
+ - Developers tools from Brave browser Desktop and Firefox Desktop
+
+For Desktop site the following browsers has been used:
+ - Firefox 89.0.1 (Windows version)
+ - Brave 1.25.72 (windows version)
 
 - User stories testing
 
@@ -116,24 +131,24 @@ On Desktop the following browsers has been used for testing:
         - Tested doing searchs as a diferent register users and not register user.
           The behaviour is the expected one, returning entrys from inside the dictionary or an error message if no match is found.
         
-    - Anonimous users can't add, delete or edit terms in the database
+    - Anonimous users can't add, delete, edit terms or edit user profiles
         - If an anonimous user tries to edit a term using an URL to reach the edit entry page a warning is shown
         - If it tries to add a term using an URL to reach the add term page a warning is shown
-        - If it tries to reach the profile page of a register user to be able to delete a term an error happens and the app crashes
-        - Same results happens in mobile and desktop configurations
+        - If it tries to reach the profile page of a register user to be able to delete a term an error happens and the app crashes (added to the bug section)
+        - Same results for mobile and desktop configurations
     
-    - Anonimous users could become registered user using the corresponding form
+    - Anonimous users can become registered user using the corresponding form
         - Tested in mobile an desktop configurations, working as intended. The user is created without issues with the data submited by the form
     
     - Registered users should be able add new entrys to the dictionary
         - Functionality works as intended on mobile and desktop adding the terms, description and the user that create the entry to the dictionary.
     
     - Registered users only will be able to edit/delete their own entrys
-        - 
-        
-        
+        - Tested that register users can only access their own profile so they can not delete terms on other users profiles
+        - Anonimous users can't access any profile and therefore they can not access to the delete option (returns a 500 error, added to bug section)        
 
     - Register user would have the option to update the email and password used for registration
+
 
 - Other scenarios:
     - If an entry that has been deleted is tried to be updated an error appears
@@ -141,22 +156,24 @@ On Desktop the following browsers has been used for testing:
 
 ### Bugs
 
-- When an update in the user profile happens two alerts messages appears, one for success and another for failure
+- When an update in the user profile successfully happens two alerts messages appears, one for success and another for failure
 - On mobile (Samsung S8, Brave Browser 1.25.73, and developer tools mobile view):
      - The text for the title bar, the buttons edit/delete in the user_profile appears outside of their place.
+- If an anonimous user tries to reach the profile page of a register user an error happens and the app crashes (on Firefox returns a 500 error)
+    application should not crash and show a message instead
 
 ## Deployment
 
 ### Heroku Deployment
 
-- These are the steps followed to deploy the proyect on Heroku
+These are the steps followed to deploy the proyect on Heroku
 
 1. Create a requierements.txt, in Gitpod terminal:
     - pip3 freeze --local > requirements.txt
     
 2. Create a Procfile, in Gitpod terminal:
     - echo web: python app.py > Procfile
-     - open the Procfile and check that there is no trailing lines after the text
+    - open the Procfile and check that there is no trailing lines after the text
 
 3. Add and push the files to GitHub:
     - git add requirements.txt
@@ -174,7 +191,7 @@ On Desktop the following browsers has been used for testing:
         KEY | VALUES
         --------------|--------------
         IP | 0.0.0.0
-        MONGO_DBNAME|
+        MONGO_DBNAME| name of the database
         MONGO_URI| mongodb+srv://user:passworduser@namecluster.8pkrb.mongodb.net/collection?retryWrites=true&w=majority
         PORT| 5000
         SECRET_KEY    |
@@ -191,14 +208,13 @@ On Desktop the following browsers has been used for testing:
 
 ## Credits
 
-The following terms and part of the descriotions were taken from www.wikipedia.com
+The following terms and part of the descriptions were taken from [Wikipedia](https://www.wikipedia.com)
 
+The use of a second @app.route was inspired for the following post [stackoverflow](https://stackoverflow.com/questions/17873820/flask-url-for-with-multiple-parameters)
 
-https://stackoverflow.com/questions/17873820/flask-url-for-with-multiple-parameters
+The following links were consulted to solve issues during the development
 
 https://www.w3schools.com/python/python_mongodb_update.asp
-
-https://stackoverflow.com/questions/60547442/pymongo-update-one-not-updating-based-on-id
 
 https://pymongo.readthedocs.io/en/stable/api/pymongo/collection.html#pymongo.collection.Collection.find_one
 

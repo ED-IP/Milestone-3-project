@@ -40,14 +40,14 @@ def search_result():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     ''' Register a user.
-            if the user is created:
-                Returns:
-                    Add user to the database
-                    Once the user is created login it in the application
-                    Returns to the User profile page
+        if the user is created:
+        Returns:
+        Add user to the database
+        Once the user is created login it in the application
+        Returns to the User profile page
 
-            If the user is not created:
-                Returns to the register user page
+        If the user is not created:
+        Returns to the register user page
     '''
     if request.method == "POST":
         # check if username exists in the DB
@@ -76,14 +76,14 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     ''' Log In an user in the application.
-            if the user exists:
-                The login details used are correct:
-                    Login it in the application
-                    Returns to the User profile page
+        if the user exists:
+        The login details used are correct:
+        Login it in the application
+        Returns to the User profile page
 
-                The login details aren't correct:
-                    Displays a error message
-                    Return to Login page
+        The login details aren't correct:
+        Displays a error message
+        Return to Login page
 
     '''
     if request.method == "POST":
@@ -112,12 +112,12 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     ''' Shows profile for the user.
-            Args:
-                username: username for the user
-            Returns:
-                User's profile page
-                A list with the terms inside the terms collection (searchs)
-                The username of the user (username)
+        Args:
+        username: username for the user
+        Returns:
+        User's profile page
+        A list with the terms inside the terms collection (searchs)
+        The username of the user (username)
     '''
     searchs = list(mongo.db.terms.find())
     # grab session user's username from DB
@@ -130,20 +130,22 @@ def profile(username):
     return redirect(url_for("main_search"))
 
 
+# The extra app.route part of he code was researched with the following
+# (https://stackoverflow.com/questions/17873820/flask-url-for-with-multiple-parameters)
 @app.route("/edit_profile", methods=["GET", "POST"])
 @app.route("/edit_profile/<username>", methods=["GET", "POST"])
 def edit_profile(username=None):
     ''' Edit profile details for the user.
-            Args:
-                username: username for the user
-            Returns:
-                Using the username find the "_id" for the user
-                Get new values from the edit_profile page
-                Using the "_id", update the values in the database
-                Shows a message
-                Returns to the edit_profile page
-            If the update is cancel:
-                Returns to user's edit_user page
+        Args:
+        username: username for the user
+        Returns:
+        Using the username find the "_id" for the user
+        Get new values from the edit_profile page
+        Using the "_id", update the values in the database
+        Shows a message
+        Returns to the edit_profile page
+        If the update is cancel:
+        Returns to user's edit_user page
     '''
     user_info = mongo.db.users.find_one({'username': username})
     if not session or not user_info or user_info['username'] != session['user']:
@@ -168,9 +170,9 @@ def edit_profile(username=None):
 @app.route("/logout")
 def logout():
     ''' Close the session for the user.
-            Log out the user
-            Shows a message about the action
-            Returns to the login page
+        Log out the user
+        Shows a message about the action
+        Returns to the login page
     '''
     # close the session
     flash("Your session has been closed")
@@ -178,6 +180,8 @@ def logout():
     return redirect(url_for("login"))
 
 
+# The extra app.route part of he code was researched with the following
+# (https://stackoverflow.com/questions/17873820/flask-url-for-with-multiple-parameters)
 @app.route("/edit_entry", methods=["GET", "POST"])
 @app.route("/edit_entry/<entry_id>", methods=["GET", "POST"])
 def edit_entry(entry_id=None):
@@ -214,10 +218,10 @@ def edit_entry(entry_id=None):
 @app.route("/add_entry", methods=["GET", "POST"])
 def add_entry():
     ''' Add an entry to the dictionary.
-            Create a dictionary with the new data from the add_entry.html
-                and session user (term)
-            Insert the dictionary data in the database
-            Returns to the add_entry page
+        Create a dictionary with the new data from the add_entry.html
+        and session user (term)
+        Insert the dictionary data in the database
+        Returns to the add_entry page
     '''
     if not session:
         flash("You are not authoriced to do that operation")
@@ -239,12 +243,12 @@ def add_entry():
 @app.route("/delete_entry/<term>")
 def delete_entry(term):
     ''' Edit profile details for the user.
-            Args:
-                term: entry from the database
-            Returns:
-                Delete the term entry in the database
-                Shows a message
-                Returns to the users'profile page
+        Args:
+        term: entry from the database
+        Returns:
+        Delete the term entry in the database
+        Shows a message
+        Returns to the users'profile page
     '''
     entry = mongo.db.terms.find_one({"_id": ObjectId(term)})
     if not entry or entry['user'] != session["user"]:
