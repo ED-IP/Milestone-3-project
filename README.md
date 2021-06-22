@@ -60,7 +60,7 @@ Also it is possible for guest to register in the website acquiring the ability o
 
 - __Databases__
 
-For this proyect I use a database with two collections, one for the terms of the dictionary and another one for the users:
+For this project I used a database with two collections, one for the terms of the dictionary and another one for the users:
 - USER collection structure
 
     KEY | VALUES
