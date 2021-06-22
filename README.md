@@ -85,6 +85,8 @@ For this project I used a database with two collections, one for the terms of th
 - The ability to add user as administrator that can add/edit/delete users and entries in the dictionary
 - A GUI for the administrator user
 - A dedicated error page with descriptives messages (For example, when an user tries to delete an entry by a different user)
+- There is too much space unused at the sides of the pages, specially with big monitors. Could be a good idea try to use it for something
+  or add some kind of decoration
  
 ## UX
 
@@ -99,7 +101,14 @@ A user of the website:
 
 ## Typography and Color Scheme
 
-1. Typography:
+The intention under the color scheme choose for the project was to focus on the reading experience for that reason
+I choose black and white for the majority of the page.
+
+I change the color of headers for the list of terms added by the user in the user profile page to break a bit the monotony and to emphasise
+the collapsible element.
+
+For buttons I use green for submit actions and red to cancel or going back a step, since I think there are well understand globally.
+
 
 ## Wireframes
 
@@ -196,6 +205,12 @@ Add term | 96 | 92 | 100 | 91
 Edit User | 96 | 92 | 100 | 91
 
 The test didn't work for the Search Result page.
+
+- Browser's Developer tools:
+    The developers tools were used to tes the reponsive design of the site.
+     - In general it works correctly but there is a constant issue with the text (in buttons specially) that overflow the button.
+     - Ipad and Iphone settings show a white line at the right side that runs from the top to the bottom of the screen in severeal models.
+     - Using the Navbar menu covers all the screen when Galaxy fold setting was tested. Once an option is selected the menu closes correctly
 
 ### Bugs
 
