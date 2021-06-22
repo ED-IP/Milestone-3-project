@@ -145,31 +145,31 @@ For Desktop site the following browsers has been used:
 
 ### User stories testing
 
-    - Users Should be able to search for terms inside the dictionary (Anonymous and registered):
-        - Tested doing searches as a different register users and not register user.
-          The behaviour is the expected one, returning entries from inside the dictionary or an error message if no match is found.
+- Users Should be able to search for terms inside the dictionary (Anonymous and registered):
+    - Tested doing searches as a different register users and not register user.
+      The behaviour is the expected one, returning entries from inside the dictionary or an error message if no match is found.
         
-    - Anonymous users can't add, delete, edit terms or edit user profiles
-        - If an anonymous user tries to edit a term using an URL to reach the edit entry page a warning is shown
-        - If it tries to add a term using an URL to reach the add term page a warning is shown
-        - If it tries to reach the profile page of a register user to be able to delete a term an error happens and the app crashes (added to the bug section)
-        - Same results for mobile and desktop configurations
+- Anonymous users can't add, delete, edit terms or edit user profiles
+    - If an anonymous user tries to edit a term using an URL to reach the edit entry page a warning is shown
+    - If it tries to add a term using an URL to reach the add term page a warning is shown
+    - If it tries to reach the profile page of a register user to be able to delete a term an error happens and the app crashes (added to the bug section)
+    - Same results for mobile and desktop configurations
     
-    - Anonymous users can become registered user using the corresponding form
-        - Tested in mobile an desktop configurations, working as intended. The user is created without issues with the data submitted by the form
+- Anonymous users can become registered user using the corresponding form
+    - Tested in mobile an desktop configurations, working as intended. The user is created without issues with the data submitted by the form
     
-    - Registered users should be able add new entries to the dictionary
-        - Functionality works as intended on mobile and desktop adding the terms, description and the user that create the entry to the dictionary.
+- Registered users should be able add new entries to the dictionary
+    - Functionality works as intended on mobile and desktop adding the terms, description and the user that create the entry to the dictionary.
     
-    - Registered users only will be able to edit/delete their own entries
-        - Tested that register users can only access their own profile so they can not delete terms on other users profiles
-        - Anonymous users can't access any profile and therefore they can not access to the delete option (returns a 500 error, added to bug section)        
+- Registered users only will be able to edit/delete their own entries
+    - Tested that register users can only access their own profile so they can not delete terms on other users profiles
+    - Anonymous users can't access any profile and therefore they can not access to the delete option (returns a 500 error, added to bug section)        
 
-    - Register user would have the option to update the email and password used for registration
-        - Tested the functionality on mobile and desktop, the entry in the database is updated but there is a bug with the success messages (noted in the bug section)
+- Register user would have the option to update the email and password used for registration
+    - Tested the functionality on mobile and desktop, the entry in the database is updated but there is a bug with the success messages (noted in the bug section)
 
 ### Other scenarios:
-    - If an entry that has been deleted is tried to be updated an error appears
+    - If an entry that has been deleted is tried to be updated (via URL) an error appears
 
 - [W3C Validation tools](https://validator.w3.org/)
    - All the HTML files were tested with the W3C validator, some html errors were found and fixed.
@@ -211,7 +211,7 @@ The test didn't work for the Search Result page.
 
 ### Browser's Developer tools
 
-The developers tools were used to tes the reponsive design of the site.
+The developers tools were used to test the reponsive design of the site.
 
 - In general it works correctly but there is a constant issue with the text (in buttons specially) that overflow the button.
 - Ipad and Iphone settings show a white line at the right side that runs from the top to the bottom of the screen in severeal models.
@@ -221,9 +221,9 @@ The developers tools were used to tes the reponsive design of the site.
 
 - When an update in the user profile successfully happens two alerts messages appears, one for success and another for failure
 - On mobile (Samsung S8, Brave Browser 1.25.73, and developer tools mobile view):
-     - The text for the title bar, the buttons edit/delete in the user_profile appears outside of their place.
+- The text for the title bar, the buttons edit/delete in the user_profile overflows outside of their place for mobile devices.
 - If an anonymous user tries to reach the profile page of a register user an error happens and the app crashes (on Firefox returns a 500 error)
-    application should not crash and show a message instead
+  application should not crash and show a message instead
 
 ## Deployment
 
