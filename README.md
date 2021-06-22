@@ -61,13 +61,21 @@ Also it is possible for guest to register in the website adquiring the ability o
 - __Databases__
 
 For this proyect I use a database with two collections, one for the terms of the dictionay and another one for the users:
-- User collection
+- USER collection structure
 
     KEY | VALUES
     -------|-------
     user | 
     email | 
     password | 
+
+- TERMS collection structure
+
+    KEY | VALUES
+    -------|-------
+    term |
+    user | 
+    definition | 
 
 ### Future Features
 
