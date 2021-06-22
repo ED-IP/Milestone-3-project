@@ -1,4 +1,4 @@
-# Tech-Tionary 
+# TECH-TiONARY 
 
 TECH-TiONARY is dictionary dedicated to store Computer Science and tech terms.
 The objective of the site is to have short definitions of common terms used in the field of computer since and technology but without giving a full explain of the term in question, for example for terms related to coding it will not provide examples of use.
@@ -283,7 +283,18 @@ These are the steps followed to deploy the proyect on Heroku
 
 ## Credits
 
-The following terms and part of the descriptions were taken from [Wikipedia](https://www.wikipedia.com)
+The following terms and part of the descriptions were taken from [Wikipedia](https://www.wikipedia.com) and added to the dictionary
+
+[Computer Science](https://en.wikipedia.org/wiki/Computer_science)
+[Solid State Drive](https://en.wikipedia.org/wiki/Solid-state_drive)
+[Central Processing Unit](https://en.wikipedia.org/wiki/Central_processing_unit)
+[Graphic Processing Unit](https://en.wikipedia.org/wiki/Graphics_processing_unit)
+[Hard disk drive](https://en.wikipedia.org/wiki/Hard_disk_drive)
+[Compiler](https://en.wikipedia.org/wiki/Compiler)
+[Source code](https://en.wikipedia.org/wiki/Source_code)
+[Binary code](https://en.wikipedia.org/wiki/Binary_code)
+[Internet](https://en.wikipedia.org/wiki/Internet)
+
 
 The use of a second @app.route was inspired for the following post [stackoverflow](https://stackoverflow.com/questions/17873820/flask-url-for-with-multiple-parameters)
 
