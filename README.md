@@ -1,10 +1,10 @@
 # Tech-Tionary 
 
-TECH-TiONARY is dictionay dedicated to store Computer Science and tech terms.
+TECH-TiONARY is dictionary dedicated to store Computer Science and tech terms.
 The objective of the site is to have short definitions of common terms used in the field of computer since and technology but without giving a full explain of the term in question, for example for terms related to coding it will not provide examples of use.
 
 The target user is those that want a quick summary of some term/words that they could have read in more in detail documentation or around the web.
-Also it is possible for guest to register in the website adquiring the ability of add/edit/delete entrys to the dictionary (with some limitations for the last two options).
+Also it is possible for guest to register in the website acquiring the ability of add/edit/delete entries to the dictionary (with some limitations for the last two options).
 
 ## Features
 
@@ -14,11 +14,11 @@ Also it is possible for guest to register in the website adquiring the ability o
 
     - Featured on all eight pages, the full responsive navigation bar includes links to the Home page (main search), Log In, Register, User profile, Edit User Details, Search Results, Add Entry and Edit Entry. It is identical in each page to allow for easy navigation.
     - The navigation bar allows the user to navigate through the site with different screen size devices devices without having to use the "back" and "Forward" buttons.
-    - Depending if the user is a Registered one or Anonimous guest some of the options will be or not present in the menu.
+    - Depending if the user is a Registered one or Anonymous guest some of the options will be or not present in the menu.
 
 - __Search Page__
 
-    - The Search page (main page and also accesible with the "Home" option in the menu) presents a field where the user can search inside the dictionary
+    - The Search page (main page and also accessible with the "Home" option in the menu) presents a field where the user can search inside the dictionary
 
 - __Search Results__
 
@@ -27,7 +27,7 @@ Also it is possible for guest to register in the website adquiring the ability o
 
 - __Register User page__
 
-    - In this section of the web an anonimous user can register to gain the ability to add/edit/delete entrys from dictionary
+    - In this section of the web an anonymous user can register to gain the ability to add/edit/delete entries from dictionary
     - The user have to provide a username, e-mail and a password
     - There is a link to the Log In page in case that the user have already registered.
 
@@ -39,7 +39,7 @@ Also it is possible for guest to register in the website adquiring the ability o
 
 - __User Profile__
 
-    - In the User Profile all the entrys added by the user are listed
+    - In the User Profile all the entries added by the user are listed
     - In every entry there are buttons that allow to delete or edit the entry
     - There is a button that sends the user to the Edit User details section
 
@@ -55,12 +55,12 @@ Also it is possible for guest to register in the website adquiring the ability o
 - __Edit Entry__
 
     - This section provides two fields that allow a register to edit a term and its definition
-    - The current value for the entrys are shown on the top of the edit field to help the user known the previous values and avoid possible mistakes
-    - The user only can edit entrys made by itself
+    - The current value for the entries are shown on the top of the edit field to help the user known the previous values and avoid possible mistakes
+    - The user only can edit entries made by itself
 
 - __Databases__
 
-For this proyect I use a database with two collections, one for the terms of the dictionay and another one for the users:
+For this proyect I use a database with two collections, one for the terms of the dictionary and another one for the users:
 - USER collection structure
 
     KEY | VALUES
@@ -80,20 +80,20 @@ For this proyect I use a database with two collections, one for the terms of the
 ### Future Features
 
 - Add some random search results to the main search page to make it more appealing
-- Add checks to avoid duplicate entrys
+- Add checks to avoid duplicate entries
 - Night mode color Scheme
-- The ability to add user as administrator that can add/edit/delete users and entrys in the dictionary
+- The ability to add user as administrator that can add/edit/delete users and entries in the dictionary
 - A GUI for the administrator user
-- A dedicated error page with descriptives messages (E.G: when an user tries to delete an entry by a different user)
+- A dedicated error page with descriptives messages (For example, when an user tries to delete an entry by a different user)
  
 ## UX
 
 A user of the website:
 - Should be able to search for terms inside the dictionary (All users)
-- Anonimous users can't add, delete or edit terms in the database
-- Anonimous users could become registered user using the corresponding form
-- Registered users should be able add new entrys to the dictionary
-- Registered users only will be able to edit/delete their own entrys
+- Anonymous users can't add, delete or edit terms in the database
+- Anonymous users could become registered user using the corresponding form
+- Registered users should be able add new entries to the dictionary
+- Registered users only will be able to edit/delete their own entries
 - Register user would have the option to update the email and password used for registration
 
 
@@ -114,7 +114,7 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
     - **Materialize** is used to provide css style and some JavaScript content.
 
 - **[Font Awesome](https://fontawesome.com/)**
-	- The website use several simbols from **Font Awesome** service.
+	- The website use several symbols from **Font Awesome** service.
 
 ## To do / Incomplete features
 
@@ -136,29 +136,28 @@ For Desktop site the following browsers has been used:
 
 - User stories testing
 
-    - Users Should be able to search for terms inside the dictionary (Anonimous and registered):
-        - Tested doing searchs as a diferent register users and not register user.
-          The behaviour is the expected one, returning entrys from inside the dictionary or an error message if no match is found.
+    - Users Should be able to search for terms inside the dictionary (Anonymous and registered):
+        - Tested doing searches as a different register users and not register user.
+          The behaviour is the expected one, returning entries from inside the dictionary or an error message if no match is found.
         
-    - Anonimous users can't add, delete, edit terms or edit user profiles
-        - If an anonimous user tries to edit a term using an URL to reach the edit entry page a warning is shown
+    - Anonymous users can't add, delete, edit terms or edit user profiles
+        - If an anonymous user tries to edit a term using an URL to reach the edit entry page a warning is shown
         - If it tries to add a term using an URL to reach the add term page a warning is shown
         - If it tries to reach the profile page of a register user to be able to delete a term an error happens and the app crashes (added to the bug section)
         - Same results for mobile and desktop configurations
     
-    - Anonimous users can become registered user using the corresponding form
-        - Tested in mobile an desktop configurations, working as intended. The user is created without issues with the data submited by the form
+    - Anonymous users can become registered user using the corresponding form
+        - Tested in mobile an desktop configurations, working as intended. The user is created without issues with the data submitted by the form
     
-    - Registered users should be able add new entrys to the dictionary
+    - Registered users should be able add new entries to the dictionary
         - Functionality works as intended on mobile and desktop adding the terms, description and the user that create the entry to the dictionary.
     
-    - Registered users only will be able to edit/delete their own entrys
+    - Registered users only will be able to edit/delete their own entries
         - Tested that register users can only access their own profile so they can not delete terms on other users profiles
-        - Anonimous users can't access any profile and therefore they can not access to the delete option (returns a 500 error, added to bug section)        
+        - Anonymous users can't access any profile and therefore they can not access to the delete option (returns a 500 error, added to bug section)        
 
     - Register user would have the option to update the email and password used for registration
-        - Tested the funcionality on mobile and desktop, the entry in the database is updated but there is a bug with the success messages (noted in the bug section)
-
+        - Tested the functionality on mobile and desktop, the entry in the database is updated but there is a bug with the success messages (noted in the bug section)
 
 - Other scenarios:
     - If an entry that has been deleted is tried to be updated an error appears
@@ -168,7 +167,7 @@ For Desktop site the following browsers has been used:
    - Still there are errors that I think are related to the Jinja templates
 
 [CSS Validator](https://jigsaw.w3.org/css-validator/)
-   - Style.css was tested with the css validator, not error was found
+   - Style.css was tested with the css validator, no error was found
 
 
 ### Bugs
@@ -176,7 +175,7 @@ For Desktop site the following browsers has been used:
 - When an update in the user profile successfully happens two alerts messages appears, one for success and another for failure
 - On mobile (Samsung S8, Brave Browser 1.25.73, and developer tools mobile view):
      - The text for the title bar, the buttons edit/delete in the user_profile appears outside of their place.
-- If an anonimous user tries to reach the profile page of a register user an error happens and the app crashes (on Firefox returns a 500 error)
+- If an anonymous user tries to reach the profile page of a register user an error happens and the app crashes (on Firefox returns a 500 error)
     application should not crash and show a message instead
 
 ## Deployment
