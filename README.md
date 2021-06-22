@@ -113,8 +113,9 @@ On Desktop the following browsers has been used for testing:
 - User stories testing
 
     - Users Should be able to search for terms inside the dictionary (Anonimous and registered):
-        - Tested doing search as a diferent register users and not register user. The behaviour is the expected one, returning entrys from inside the dictionary.
-
+        - Tested doing searchs as a diferent register users and not register user.
+          The behaviour is the expected one, returning entrys from inside the dictionary or an error message if no match is found.
+        
     - Anonimous users can't add, delete or edit terms in the database
         - If an anonimous user tries to edit a term using an URL to reach the edit entry page a warning is shown
         - If it tries to add a term using an URL to reach the add term page a warning is shown
@@ -125,7 +126,7 @@ On Desktop the following browsers has been used for testing:
         - Tested in mobile an desktop configurations, working as intended. The user is created without issues with the data submited by the form
     
     - Registered users should be able add new entrys to the dictionary
-        - Functionality wors as intended on mobile and desktop
+        - Functionality works as intended on mobile and desktop adding the terms, description and the user that create the entry to the dictionary.
     
     - Registered users only will be able to edit/delete their own entrys
         - 
@@ -141,9 +142,8 @@ On Desktop the following browsers has been used for testing:
 ### Bugs
 
 - When an update in the user profile happens two alerts messages appears, one for success and another for failure
-- On mobile view (Samsung S8, Brave Browser 1.25.73), the text for the buttons edit/delete in the user_profile appears outside of the button
-- On mobile view (Samsung S8, Brave Browser 1.25.73), the Title on the Navbar doesn't render completelly
-
+- On mobile (Samsung S8, Brave Browser 1.25.73, and developer tools mobile view):
+     - The text for the title bar, the buttons edit/delete in the user_profile appears outside of their place.
 
 ## Deployment
 
@@ -151,25 +151,25 @@ On Desktop the following browsers has been used for testing:
 
 - These are the steps followed to deploy the proyect on Heroku
 
-    1. Create a requierements.txt, in Gitpod terminal:
-        - pip3 freeze --local > requirements.txt
+1. Create a requierements.txt, in Gitpod terminal:
+    - pip3 freeze --local > requirements.txt
     
-    2. Create a Procfile, in Gitpod terminal:
-        - echo web: python app.py > Procfile
-        - open the Procfile and check that there is no trailing lines after the text
+2. Create a Procfile, in Gitpod terminal:
+    - echo web: python app.py > Procfile
+     - open the Procfile and check that there is no trailing lines after the text
 
-    3. Add and push the files to GitHub:
-        - git add requirements.txt
-        - git add Procfile
-        - git commit -m ""
-        - git push
+3. Add and push the files to GitHub:
+    - git add requirements.txt
+    - git add Procfile
+    - git commit -m ""
+    - git push
 
-    4. On the Heroku Dashboard click in the New button and choose "New App"
+4. On the Heroku Dashboard click in the New button and choose "New App"
 
-    5. Choose a name and a region (for the proyect I use Europe) and click create
+5. Choose a name and a region (for the proyect I use Europe) and click create
 
-    6. Once the app is created click on the settings tab, and then click on "Reveal config Vars" button.
-        - Add the following key, values pairs
+6. Once the app is created click on the settings tab, and then click on "Reveal config Vars" button.
+    - Add the following key, values pairs
         
         KEY | VALUES
         --------------|--------------
@@ -179,17 +179,20 @@ On Desktop the following browsers has been used for testing:
         PORT| 5000
         SECRET_KEY    |
 
-    7. Go to the Deployment tab and in the Deployment Method section choose GitHub
-        - In the connect to GitHub choose the correct repository and click connect
+7. Go to the Deployment tab and in the Deployment Method section choose GitHub
+    - In the connect to GitHub choose the correct repository and click connect
         
-    8. In the section Automatic Deploys  choose the branch to deploy (in mycase was the master one) and click in Enable Automtic Deploys
+8. In the section Automatic Deploys  choose the branch to deploy (in mycase was the master one) and click in Enable Automtic Deploys
 
-    9. After building the proyect it should be deployed. You can open the app by clicking in the Open App button at the top of the page
+9. After building the proyect it should be deployed. You can open the app by clicking in the Open App button at the top of the page
 
-    10. The address for the deployed proyect: https://dictionary-cs.herokuapp.com/
+10. The address for the deployed proyect: https://dictionary-cs.herokuapp.com/
 
 
 ## Credits
+
+The following terms and part of the descriotions were taken from www.wikipedia.com
+
 
 https://stackoverflow.com/questions/17873820/flask-url-for-with-multiple-parameters
 
