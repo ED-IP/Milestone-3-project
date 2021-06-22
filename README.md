@@ -128,10 +128,10 @@ Wireframes for the project can be found [here](https://github.com/ED-IP/Mileston
 ## To do / Incomplete features
 
 - There are several input fields that need to indicate that they have some restrictions in the characters they can accept and limitations in length
-~~- Add the footer~~
+- ~~Add the footer~~
 - Adjust the footer height
 - Visually more engaging warning message (when matches aren't found in the dictionary, a user trying to edit a entry that is not their etc...)
-~~- Remove Debug from app.py~~
+- ~~Remove Debug from app.py~~
    
 ## Testing
 
