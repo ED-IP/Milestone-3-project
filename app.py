@@ -150,19 +150,19 @@ def edit_profile(username=None):
     if not session or not user_info or user_info['username'] != session['user']:
         flash("You are not authoriced to do that operation")
         return render_template('search.html')
-    else:
-        if request.method == "POST":
-            # find the _id for the user
-            user_id = user_info["_id"]
-            query = {"_id": ObjectId(user_id)}
-            newvalue = {"$set": {"email": request.form.get("email"),
-                        "password": generate_password_hash(request.form.get("password"))}}
-            mongo.db.users.update_one(query, newvalue)
-            flash("Profile updated")
-            return redirect(url_for("edit_profile"))
 
-        user_email = user_info["email"]
-        return render_template("edit_user.html", username=username, user_email=user_email)
+    if request.method == "POST":
+        # find the _id for the user
+        user_id = user_info["_id"]
+        query = {"_id": ObjectId(user_id)}
+        newvalue = {"$set": {"email": request.form.get("email"),
+                    "password": generate_password_hash(request.form.get("password"))}}
+        mongo.db.users.update_one(query, newvalue)
+        flash("Profile updated")
+        return redirect(url_for("edit_profile"))
+
+    user_email = user_info["email"]
+    return render_template("edit_user.html", username=username, user_email=user_email)
 
 
 @app.route("/logout")
