@@ -97,15 +97,14 @@ def login():
                 flash("Welcome, {}".format(
                     request.form.get("username")))
                 return redirect(url_for("profile", username=session["user"]))
-            else:
-                # password doesn't match
-                flash("Incorrect User and/or Password")
-                return redirect(url_for("login"))
 
-        else:
-            # username doesn't exists
+            # password doesn't match
             flash("Incorrect User and/or Password")
             return redirect(url_for("login"))
+
+        # username doesn't exists
+        flash("Incorrect User and/or Password")
+        return redirect(url_for("login"))
     return render_template("login_user.html")
 
 
@@ -162,9 +161,8 @@ def edit_profile(username=None):
             flash("Profile updated")
             return redirect(url_for("edit_profile"))
 
-        else:
-            user_email = user_info["email"]
-            return render_template("edit_user.html", username=username, user_email=user_email)
+        user_email = user_info["email"]
+        return render_template("edit_user.html", username=username, user_email=user_email)
 
 
 @app.route("/logout")
@@ -201,18 +199,17 @@ def edit_entry(entry_id=None):
     if not entry or not session or entry['user'] != session["user"]:
         flash("You are not authoriced to do that operation")
         return render_template('login_user.html')
-    else:
-        if request.method == "POST":
-            query = {"_id": ObjectId(entry_id)}
-            newvalue = {"$set": {"term": request.form.get("term"),
-                        "definition": request.form.get("definition")}}
-            mongo.db.terms.update_one(query, newvalue)
-            flash("Entry updated")
-            return redirect(url_for("edit_entry", entry_id=entry_id))
 
-        else:
-            entry = mongo.db.terms.find_one({"_id": ObjectId(entry_id)})
-            return render_template("edit_entry.html", entry_id=entry)
+    if request.method == "POST":
+        query = {"_id": ObjectId(entry_id)}
+        newvalue = {"$set": {"term": request.form.get("term"),
+                   "definition": request.form.get("definition")}}
+        mongo.db.terms.update_one(query, newvalue)
+        flash("Entry updated")
+        return redirect(url_for("edit_entry", entry_id=entry_id))
+
+    entry = mongo.db.terms.find_one({"_id": ObjectId(entry_id)})
+    return render_template("edit_entry.html", entry_id=entry)
 
 
 @app.route("/add_entry", methods=["GET", "POST"])
