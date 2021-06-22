@@ -226,18 +226,18 @@ def add_entry():
     if not session:
         flash("You are not authoriced to do that operation")
         return render_template('login_user.html')
-    else:
-        if request.method == "POST":
-            term = {
-                    "term": request.form.get("term"),
-                    "user": session["user"],
-                    "definition": request.form.get("definition")
-                }
-            mongo.db.terms.insert_one(term)
-            flash("New entry added to the dicitonary")
-            return redirect(url_for("profile", username=session['user']))
 
-        return render_template("add_entry.html")
+    if request.method == "POST":
+        term = {
+                "term": request.form.get("term"),
+                "user": session["user"],
+                "definition": request.form.get("definition")
+                }
+        mongo.db.terms.insert_one(term)
+        flash("New entry added to the dicitonary")
+        return redirect(url_for("profile", username=session['user']))
+
+    return render_template("add_entry.html")
 
 
 @app.route("/delete_entry/<term>")
@@ -254,10 +254,10 @@ def delete_entry(term):
     if not entry or entry['user'] != session["user"]:
         flash("You are not authoriced to do that operation")
         return render_template('search.html')
-    else:
-        mongo.db.terms.remove({"_id": ObjectId(term)})
-        flash("Entry Successfully deleted")
-        return redirect(url_for("profile", username=session["user"]))
+
+    mongo.db.terms.remove({"_id": ObjectId(term)})
+    flash("Entry Successfully deleted")
+    return redirect(url_for("profile", username=session["user"]))
 
 
 if __name__ == "__main__":
