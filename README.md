@@ -122,7 +122,7 @@ On Desktop the following browsers has been used for testing:
         - Same results happens in mobile and desktop configurations
     
     - Anonimous users could become registered user using the corresponding form
-        - 
+        - Tested in mobile an desktop configurations, working as intended. The user is created without issues with the data submited by the form
     
     - Registered users should be able add new entrys to the dictionary
         - Functionality wors as intended on mobile and desktop
