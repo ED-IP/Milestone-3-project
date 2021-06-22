@@ -170,6 +170,7 @@ For Desktop site the following browsers has been used:
    - Style.css was tested with the css validator, no error was found
 
 - Lighthouse tests:
+
 Section | Performance | Accessibility | Best Practices | Seo
 ------------|------|------|------|------
 Main Search | 99 | 92 | 100 | 89
